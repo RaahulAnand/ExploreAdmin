@@ -1,0 +1,179 @@
+<div class="booking-activity-section pt-100">
+    <div class="bookingActivity container ">
+        <mat-horizontal-stepper #stepper>
+            <mat-step>
+                <form>
+                    <ng-template matStepLabel>
+                        <mat-icon class="flag-icon">flag</mat-icon>
+                        <p class="details-type font-size-10 pt-5">Package Details</p>
+                    </ng-template>
+                    <div class="details-main-pane col-md-12">
+                        <div class="left-pane-section col-md-4 ">
+                            <div class="date-travellers-info mb-30 pb-20">
+                                <h4 class="heading-inc pt-20 pl-20 pb-10 font-size-12 font-extraBold">CHOOSE YOUR DATE
+                                </h4>
+                                <mat-form-field>
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <input matInput [matDatepicker]="picker" readonly>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                                <div class="details-inc">
+                                    <h4 class="heading-inc pt-20 pl-20 font-size-12 font-extraBold">TRAVELLERS</h4>
+                                    <div class="head-count">
+                                        <div class="count-section" *ngFor="let type of headCount;let i= index;">
+                                            <p class="head-title m-0 pb-10 pt-10 font-size-12 font-medium">{{type.name}}
+                                            </p>
+                                            <div class="counters">
+                                                <mat-icon class="font-size-14 pt-3" (click)="decrement(type.type)">
+                                                    remove</mat-icon>
+                                                <input type="text" name="quantity" value="{{type.count}}"
+                                                    class="form-control input-number font-size-12" readonly>
+                                                <mat-icon class="font-size-14 pt-3 pl-3" (click)="increment(type.type)">
+                                                    add</mat-icon>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="changes-button pl-20 pr-20">
+                                    <button type="button" class="type-button btn btn-danger mt-20 mb-20">UPDATE
+                                        CHANGES</button>
+                                </div>
+                            </div>
+                            <div class="contact-info pb-20">
+                                <h4 class="heading-title pt-20 font-size-14 font-extraBold m-0">Have Any Questions?</h4>
+                                <h4 class="heading-sub pt-20 font-size-12 mb-20 font-extraBold">Call us</h4>
+                                <mat-icon class="phone-icon">phone</mat-icon>
+                                <h4 class="heading-mobile pt-20 font-size-28 font-semiBold">123456789</h4>
+                            </div>
+                        </div>
+                        <div class="right-pane col-md-8">
+                            <h2 class="desc-heading font-size-24 pt-20 pb-10">Boating At Kuttanad</h2>
+                            <div class="specification bottom-line pb-10">
+                                <div class="dayNight bottom-line-right col-md-4">
+                                    <mat-icon class="font-size-22">wb_sunny</mat-icon>
+                                    <p class=" font-size-12 m-0 pl-5 pr-15 pt-2 ">3 Days</p>
+                                    <mat-icon class="font-size-22 pl-10">nights_stay</mat-icon>
+                                    <p class=" font-size-12 m-0 pl-15 pr-5 pt-2">2 Nights</p>
+                                </div>
+                                <div class="location bottom-line-right col-md-4">
+                                    <mat-icon class="font-size-22 pl-10">location_on</mat-icon>
+                                    <p class=" font-size-12 m-0 pl-15 pr-5 pt-2">Alapuzha</p>
+                                </div>
+                                <div class="rating-review col-md-4">
+                                    <div class="stars">
+                                        <mat-icon class="mat-icon-xs mat-icon">star_rate
+                                        </mat-icon>
+                                        <mat-icon class="mat-icon-xs mat-icon">star_rate
+                                        </mat-icon>
+                                        <mat-icon class="mat-icon-xs mat-icon">star_rate
+                                        </mat-icon>
+                                        <mat-icon class="mat-icon-xs mat-icon">star_rate
+                                        </mat-icon>
+                                        <mat-icon class="mat-icon-xs mat-icon">star_rate
+                                        </mat-icon>
+                                    </div>
+                                    <p class="font-size-12 m-0 pl-15 pr-5 pt-2">1000 Ratings</p>
+                                </div>
+                            </div>
+                            <div class="price-information-pane mt-20 mb-30 pb-40 pl-20 pr-20">
+                                <h4 class="heading-inc pt-20 pb-10 font-size-16 font-extraBold">Boating Experience
+                                    for All</h4>
+                                <h4 class="heading-inc pt-5  pb-10 font-size-14 font-extraBold bottom-line">SUB
+                                    VARIANTS</h4>
+                                <div class="price-splitup bottom-line">
+                                    <div class="choose-activity pl-20">
+                                        <input type="checkbox" class="form-check-input" id="activitycheck" checked>
+                                        <p class="font-size-14 font-medium">Boating Experience for All</p>
+                                    </div>
+                                    <div class="price-dropdown">
+                                        <div class="heading-dropdown">
+                                            <p class="font-size-14 font-medium">Pricing</p>
+                                            <!-- <mat-icon class="mat-icon-xs mat-icon font-size-20 color-red">
+                                                keyboard_arrow_down</mat-icon> -->
+                                        </div>
+                                        <div class="adult-pricing">
+                                            <p class="font-size-14 font-medium">Per Adult</p>
+                                            <p class="font-size-14 pl-5 font-medium">1 X {{2000 | currency:'INR'}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="total-amount">
+                                        <p class="font-size-14 font-medium color-red">Total</p>
+                                        <p class="font-size-14 font-medium">{{2000 | currency:'INR'}}</p>
+                                    </div>
+
+                                </div>
+                                <div class="price-discount pt-10">
+                                    <div class="promo-code pb-10">
+                                        <p class="font-size-12 font-medium pr-20">Promo Code?</p>
+                                        <input class="form-control form-input promo-input" type="text" name="token"
+                                            #token>
+                                        <p class="font-size-12 font-semiBold apply-button"
+                                            (click)="applyToken(token.value)">
+                                            {{isTokenApplied ? 'Applied' : 'Apply'}}</p>
+                                    </div>
+                                    <div class="discount-applied">
+                                        <p class="font-size-14 font-semiBold">Discount :</p>
+                                        <div class="discounted-price">
+                                            <p class="font-size-14 font-medium ">{{2000 | currency:'INR'}}</p>
+                                            <p class="font-size-14 font-medium color-primary">-
+                                                {{1000 | currency:'INR'}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="final-amount">
+                                        <p class="font-size-16 font-semiBold">Total Price : <b
+                                                class="color-red">{{1000 | currency:'INR'}}</b></p>
+                                    </div>
+                                </div>
+                                <div class="proceed-button">
+                                    <button type="button" class="type-button btn btn-danger mt-20"
+                                        matStepperNext>PROCEED</button>
+                                </div>
+                            </div>
+                            <!-- <div>
+                                <button mat-button matStepperNext>Next</button>
+                            </div> -->
+                        </div>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <form>
+                    <ng-template matStepLabel>
+                        <mat-icon class="flag-icon">flag</mat-icon>
+                        <p class="details-type font-size-10 pt-5">Traveller Information</p>
+                    </ng-template>
+                    <div class="contact-information-section">
+                        <h2 class="heading-inc pt-20 font-size-18 font-semiBold">Contact Information</h2>
+                        <img class="fb-login" src="../../../assets/images/facebook_login.png">
+                        <h2 class="heading-inc font-size-18 pb-20 font-semiBold">OR</h2>
+                        <div class="contact-form">
+                            <input class="form-control form-input promo-input" type="text" name="firstName"
+                                placeholder="Name">
+                            <input class="form-control form-input promo-input" type="text" name="email"
+                                placeholder="Email">
+                            <input class="form-control form-input promo-input" type="text" name="phone"
+                                placeholder="Phone">
+                        </div>
+                        <div class="proceed-button">
+                            <button type="button" class="type-button btn btn-danger mt-20"
+                                matStepperNext>CONTINUE</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-step>
+            <!-- <mat-step>
+                <ng-template matStepLabel>
+                    <mat-icon class="flag-icon">flag</mat-icon>
+                    <p class="details-type font-size-10 pt-5">Secure Payment</p>
+                </ng-template>
+                <p>You are now done.</p>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button (click)="stepper.reset()">Reset</button>
+                </div>
+            </mat-step> -->
+        </mat-horizontal-stepper>
+    </div>
+</div>

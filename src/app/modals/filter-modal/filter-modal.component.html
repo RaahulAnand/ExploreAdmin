@@ -1,0 +1,55 @@
+<div class="product-dialog">
+    <div class="close-btn-outer">
+        <button mat-mini-fab color="warn" (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div>
+        <div class="filter-section pt-20 pb-20">
+            <div class="filter-heading pt-5 pb-5 pl-20 pr-20">
+                <p class="filter-title m-0">Choose Images</p>
+            </div>
+            <div class="catogery-box mt-10 pt-10 pb-10">
+                <div class="search-box">
+                    <div class="input-row pb-20 col-md-6 pt-20">
+                        <input class="form-control form-input col-md-12" type="text" name="name" placeholder="Enter Image Name" #searchName>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-20 mb-20" (click)="searchByName(searchName.value)" [disabled]="!searchName.value">Search</button>
+                    <button type="submit" class="btn btn-primary mt-20 mb-20" (click)="searchName.value='';refreshList()">Clear</button>
+                </div>
+                <div class="pt-10">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="5%">Select</th>
+                                <th width="10%">ID</th>
+                                <th width="10%">Image Name</th>
+                                <th width="20%">Thumbnail Image</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of imagesList |  paginate: { itemsPerPage: items,currentPage: p }">
+                                <td width="5%"><input type="checkbox" name="{{data.id}}" value="{{data.id}}" (click)="setImageId(data.id)"></td>
+                                <td width="10%">{{data.id}}</td>
+                                <td width="10%">{{data.name}}</td>
+                                <td width="20%"><img [src]="data.thumbnail" height="100" width="100px"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="Pagiantion">
+                        <div class="leftPaginate pl-10">
+                            <h6>Total Records: {{ totalRecords }}</h6>
+                        </div>
+                        <div class="pagination">
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="apply-button mt-20">
+                <button type="button" class="btn btn-danger" (click)="applyFilter()">Apply</button>
+            </div>
+        </div>
+    </div>
+</div>

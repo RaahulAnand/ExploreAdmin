@@ -1,0 +1,62 @@
+<div class="package-section">
+    <div class="package container ">
+        <div class="title pb-40 pt-30">
+            <h3>List Destination</h3>
+        </div>
+        <div class="country-dropdown">
+            <div class="country-option">
+                <h3 class="font-size-20">Country</h3>
+                <div class="select-group col-md-3 mr-20 ml-20">
+                    <mat-select value="selected" #selectedCountryValue>
+                        <mat-option default selected hidden value="selected">Choose Country</mat-option>
+                        <mat-option *ngFor="let country of countriesList" [value]="country.name" (click)="populateStates(country.name)">{{country.name}}
+                        </mat-option>
+                    </mat-select>
+                </div>
+            </div>
+            <div class="state-option" *ngIf="stateList.length">
+                <h3 class="font-size-20">State</h3>
+                <div class="select-group col-md-3 mr-20 ml-20">
+                    <mat-select value="selected" #selectedStateValue>
+                        <mat-option default selected hidden value="selected">Choose State</mat-option>
+                        <mat-option *ngFor="let state of stateList" [value]="state.name">{{state.name}}
+                        </mat-option>
+                    </mat-select>
+                </div>
+                <div class="proceed-button pt-30 pb-30" *ngIf="stateList.length">
+                    <button type="button" class="type-button btn btn-danger ml-20" (click)="getDestinationData(selectedCountryValue.value, selectedStateValue?.value)">Search</button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="totalRecords" class="pt-10" class="destinationList">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Country ID</th>
+                        <th>State Name</th>
+                        <th>Thumbnail Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr (click)="changeData(data.id)" *ngFor="let data of destinationList |  paginate: { itemsPerPage: items,currentPage: p }">
+                        <td>{{data.id}}</td>
+                        <td>{{data.countryId}}</td>
+                        <td>{{data.name}}</td>
+                        <td><img *ngFor="let image of data.images" [src]="image?.thumbnail" height="100" width="100px"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="Pagiantion">
+                <div class="leftPaginate">
+                    <h4>Total Records: {{ totalRecords }}</h4>
+                </div>
+                <div class="pagination">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

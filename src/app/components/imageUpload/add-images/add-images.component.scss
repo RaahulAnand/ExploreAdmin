@@ -1,0 +1,31 @@
+@import "../../../../assets/scss/functions";
+@import "../../../../assets/scss/variables";
+.others-section {
+    background-color: $gray-lighter;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    padding-bottom: 50px;
+    .others {
+        .title h3 {
+            padding-top: 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .addUpdate-form {
+            margin-left: auto;
+            background: #fff;
+            padding: 30px;
+            width: 80%;
+            margin-right: auto;
+            border-radius: 20px;
+            .image-input {
+                height: 42px;
+            }
+        }
+    }
+    button {
+        width: 100%;
+    }
+}

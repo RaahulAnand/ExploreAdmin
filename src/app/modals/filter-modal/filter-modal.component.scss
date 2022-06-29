@@ -1,0 +1,75 @@
+@import "../../../assets/scss/functions";
+@import "../../../assets/scss/variables";
+.product-dialog {
+    position: absolute;
+    top: 50px;
+    background: #e7e7e7;
+    z-index: 1;
+    border-radius: 20px;
+    width: 40%;
+    left: 30%;
+    .table-data-paragraph {
+        max-width: 30%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .close-btn-outer {
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        button {
+            border: none;
+            outline: none;
+            background: $white;
+        }
+    }
+    .filter-section {
+        p {
+            align-self: center;
+            font-weight: 500;
+        }
+        button.btn {
+            height: 35px;
+            border: none;
+            background-image: linear-gradient(to right, $light-red, $active-red);
+        }
+        .apply-button {
+            text-align: center;
+            button.btn {
+                background: $header-background;
+                width: 50%;
+                @include BorderRadius(25px, 25px, 25px, 25px);
+            }
+        }
+        .mat-icon {
+            color: orange;
+            font-size: 16px;
+        }
+        .filter-heading {
+            text-align: center
+        }
+        .catogery-box {
+            @include SetBoxShadow;
+            background: $white;
+            margin: 20px;
+            @include BorderRadius(5px, 5px, 5px, 5px);
+            overflow-y: scroll;
+            height: calc(100vh - 200px);
+            .table {
+                th {
+                    font-weight: 500;
+                    font-size: 14px;
+                }
+                td {
+                    font-size: 14px;
+                }
+            }
+            .pagination {
+                justify-content: center;
+            }
+            .search-box {
+                @include FlexLayout(row, space-around, center);
+            }
+        }
+    }
+}

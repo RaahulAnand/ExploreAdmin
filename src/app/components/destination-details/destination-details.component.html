@@ -1,0 +1,54 @@
+<div class="cities-carousel container pt-50">
+    <div class="cities-heading" *ngIf="heading">
+        <h2 class="heading-title pt-15 font-size-28 text-color-1">Best Rated on Exploreworld</h2>
+        <p class="heading-sub-title font-size-20 font-semiBold text-color-2">Best explores from us</p>
+    </div>
+    <div class="cities-item swiper-container pt-26" [swiper]="config">
+        <div class="swiper-wrapper h-100">
+            <div *ngFor="let cities of citiesList" class="swiper-slide col-md-3 col-xs-12 col-sm-6 pr-20 mb-20">
+                <div class="cities-img">
+                    <a class="cities-link">
+                        <img class="cities-detail-images" [src]="cities.imgLoc" alt="product.sku">
+                    </a>
+                    <div class="day-night">
+                        <mat-icon class="font-size-20">update</mat-icon>
+                        <p class=" font-size-12">1D-1N</p>
+                    </div>
+                    <div class="featured">
+                        <p class=" font-size-12">Featured</p>
+                    </div>
+                </div>
+                <div class="details pt-15">
+                    <p class="m-0 font-size-14">Boating at Kuttanad </p>
+                    <p class="m-0 font-size-14">with local dishes</p>
+                    <div class="stars pt-5  pb-5">
+                        <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                        <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                        <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                        <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                        <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                    </div>
+                    <div class="details-bottom pb-10">
+                        <div class="details-price">
+                            <p class="m-0 original-price font-size-12">{{'1999' | currency:'INR'}}</p>
+                            <p class="m-0 discounted-price font-size-14">{{'999' | currency:'INR'}}</p>
+                        </div>
+                        <div class="book-button">
+                            <button type="button" class="btn btn-danger font-size-14">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button mat-mini-fab class="swiper-button-prev swiper-button left-button">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <button mat-mini-fab class="swiper-button-next swiper-button">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+    </div>
+    <div class="exploreMore-button">
+        <button type="button" class=" btn btn-danger mt-20 mb-20 pl-20 pr-20 font-size-16 " *ngIf="!heading">EXPLORE MORE</button>
+    </div>
+
+</div>

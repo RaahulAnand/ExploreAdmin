@@ -1,0 +1,110 @@
+@import "../../../../assets/scss/functions";
+@import "../../../../assets/scss/variables";
+
+.company-signup {
+    .signup-header {
+        background-image: url("../../../../assets/images/mountain_house.jpg");
+        min-height: 500px;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        .container {
+            @include TextAlign(center);
+            color: $white;
+        }
+    }
+    .signup-form {
+        background-image: url("../../../../assets/images/signup_background.png");
+        background-position: bottom;
+        background-repeat: repeat-x;
+        padding-bottom: 15%;
+        box-shadow: inset 0 0 0 2000px rgba(31, 82, 97, 0.1);
+        .container {
+            .top-headings {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                .btn {
+                    background: transparent;
+                    color: $grey11;
+                    border-radius: 10px;
+                    border-color: $button-gradient-regular;
+                    font-size: 12px;
+                    height: 30px;
+                    min-width: 10%;
+                    &:first-child {
+                        background-color: $button-gradient-regular;
+                        color: $white;
+                    }
+                }
+            }
+            text-align: center;
+            .contact-form {
+                // width: 500px;
+                margin: 0 20%;
+                .groups {
+                    display: flex;
+                    &.radio {
+                        flex-direction: column;
+                        mat-radio-button{
+                            margin-bottom: -20px !important;
+                        }
+                    }
+                    .form-input:first-child {
+                        margin-right: 50px;
+                    }
+                }
+                input {
+                    background: $white;
+                    @include BorderRadius(20px, 20px, 20px, 20px);
+                    height: 45px;
+                    padding-left: 25px;
+                    margin-bottom: 25px;
+                    font-size: 14px;
+                }
+                .form-check-input {
+                    width: 20px;
+                }
+                textarea {
+                    background: $white;
+                    padding-left: 25px;
+                    @include BorderRadius(20px, 20px, 20px, 20px);
+                }
+            }
+            .proceed-button {
+                @include TextAlign(left);
+                .btn {
+                    width: 30%;
+                    border-radius: 30px;
+                    @include BorderRadius(30px, 30px, 30px, 30px);
+                    height: 60px;
+                    border: none;
+                    background-image: linear-gradient(90deg, $button-gradient-lighter, $button-gradient-darker);
+                }
+            }
+        }
+    }
+}
+/***************************************
+* Responsive Code
+****************************************/
+@media only screen and (max-width: 700px) {
+    .signup-form {
+        padding-bottom: 60% !important;
+    }
+    .contact-form {
+        width: auto !important;
+        .radio,.groups {
+            flex-wrap: wrap !important;
+            flex-direction: column;
+            @include TextAlign(center);
+        }
+    }
+    .proceed-button {
+
+        .btn {
+            width: auto !important;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+<div class="xplore-userLogin">
+    <div class="container login-page">
+        <h2 class="header-title pb-30">Login</h2>
+        <div class="box-layout">
+            <div class="content">
+                <div class="top-header-content pb-30">
+                    <p>Welcome back</p>
+                    <p>Please login with your account.</p>
+                </div>
+                <div class="login-form">
+                    <form class="login-form" [formGroup]="userLoginForm">
+                        <label for="email">USERNAME</label>
+                        <input class="form-control form-input" type="text" name="email" formControlName="emailId">
+                        <label for="password">PASSWORD</label>
+                        <input class="form-control form-input" type="text" name="password" formControlName="password">
+                        <div class="remember-section pt-30">
+                            <div class="checkbox">
+                                <input type="checkbox" class="form-check-input" id="rememberCheck"> Remeber me
+                            </div>
+                            <p>Forgot your password?</p>
+                        </div>
+                        <button type="button" class="btn btn-primary mt-20 mb-20" (click)="loginUser()">LOGIN TO YOUR
+                            ACCOUNT</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="signup pt-60">
+            <button type="button" class="btn btn-primary">Dont have an account? <p>Sign up</p></button>
+        </div>
+    </div>
+</div>

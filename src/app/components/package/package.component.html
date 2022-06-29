@@ -1,0 +1,555 @@
+<div class="package-section">
+    <div class="package container ">
+        <mat-horizontal-stepper #stepper>
+            <mat-step>
+                <form>
+                    <ng-template matStepLabel>
+                        <mat-icon class="flag-icon">fiber_manual_record</mat-icon>
+                        <p class="details-type font-size-12 pt-5">Your Product</p>
+                    </ng-template>
+                    <div class="sub-section">
+                        <form name="add-product-main-form">
+                            <div class="group">
+                                <textarea class="form-control form-input text-area col-md-12" name="review" rows="4"
+                                    cols="50" placeholder="Enter a tour title of max 10 words..."></textarea>
+                            </div>
+                            <div class="type-1">
+                                <div class="group">
+                                    <h2 class="font-size-14 font-semiBold col-md-2">Type of Tours</h2>
+                                    <mat-radio-group aria-label="Select an option" class="groups  radio pl-50">
+                                        <mat-radio-button value="privateTour" class="pr-50">
+                                            <h2 class="font-size-14 font-semiBold pt-10 pl-10">Private Tour</h2>
+                                        </mat-radio-button>
+                                        <mat-radio-button value="groupTour" class="pr-50">
+                                            <h2 class="font-size-14 font-semiBold pt-10 pl-10">Group Tour</h2>
+                                        </mat-radio-button>
+                                        <mat-radio-button value="conductingTour" class="pr-30">
+                                            <h2 class="font-size-14 font-semiBold pt-10 pl-10">Conducting Tour</h2>
+                                        </mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                                <div class="group space-between ">
+                                    <div class="select-group col-md-2 ml-15">
+                                        <mat-select value="India">
+                                            <mat-option value="India">India</mat-option>
+                                            <mat-option value="Srilanka">Srilanka</mat-option>
+                                        </mat-select>
+                                    </div>
+                                    <div class="select-group col-md-2">
+                                        <mat-select value="kerala">
+                                            <mat-option value="kerala">Kerala</mat-option>
+                                            <mat-option value="Karnataka">Karnataka</mat-option>
+                                        </mat-select>
+                                    </div>
+                                    <div class="select-group col-md-2 mr-12">
+                                        <mat-select value="kerala">
+                                            <mat-option value="kerala">Kerala</mat-option>
+                                            <mat-option value="Karnataka">Karnataka</mat-option>
+                                        </mat-select>
+                                    </div>
+                                </div>
+                                <div class="group ">
+                                    <div class="select-group col-md-2 ml-12">
+                                        <mat-select value="Adventure">
+                                            <mat-option value="Adventure">Adventure</mat-option>
+                                            <mat-option value="Back Packing">Back Packing</mat-option>
+                                            <mat-option value="Architecture">Architecture</mat-option>
+                                            <mat-option value="Aircraft">Aircraft</mat-option>
+                                            <mat-option value="Art">Art</mat-option>
+                                            <mat-option value="Bike">Bike</mat-option>
+                                        </mat-select>
+                                    </div>
+                                    <div class="col-md-3 member-count ">
+                                        <div class="head-count">
+                                            <div class="count-section">
+                                                <div class="counters">
+                                                    <mat-icon class="font-size-14 pt-3" (click)="decrement(1)">
+                                                        remove</mat-icon>
+                                                    <input type="text" name="quantity" value="0"
+                                                        class="form-control input-number font-size-12" readonly>
+                                                    <mat-icon class="font-size-14 pt-3 pl-3" (click)="increment(1)">
+                                                        add</mat-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h2 class="font-size-14 font-semiBold pr-20 pt-2">Minimum Members</h2>
+                                    </div>
+                                    <div class="col-md-3 member-count">
+                                        <div class="head-count">
+                                            <div class="count-section">
+                                                <div class="counters">
+                                                    <mat-icon class="font-size-14 pt-3" (click)="decrement(1)">
+                                                        remove</mat-icon>
+                                                    <input type="text" name="quantity" value="0"
+                                                        class="form-control input-number font-size-12" readonly>
+                                                    <mat-icon class="font-size-14 pt-3 pl-3" (click)="increment(1)">
+                                                        add</mat-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h2 class="font-size-14 font-semiBold pr-20 pt-2">Maximum Members</h2>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h2 class="font-size-14 font-semiBold col-md-2">Duration</h2>
+                                    <div class="col-md-3 member-count">
+                                        <div class="head-count ml-12">
+                                            <div class="count-section">
+                                                <div class="counters">
+                                                    <mat-icon class="font-size-14 pt-3" (click)="decrement(1)">
+                                                        remove</mat-icon>
+                                                    <input type="text" name="quantity" value="0"
+                                                        class="form-control input-number font-size-12" readonly>
+                                                    <mat-icon class="font-size-14 pt-3 pl-3" (click)="increment(1)">
+                                                        add</mat-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h2 class="font-size-14 font-semiBold pl-20 pt-2">Days</h2>
+                                    </div>
+                                    <div class="col-md-3 member-count">
+                                        <div class="head-count ml-12">
+                                            <div class="count-section">
+                                                <div class="counters">
+                                                    <mat-icon class="font-size-14 pt-3" (click)="decrement(1)">
+                                                        remove</mat-icon>
+                                                    <input type="text" name="quantity" value="0"
+                                                        class="form-control input-number font-size-12" readonly>
+                                                    <mat-icon class="font-size-14 pt-3 pl-3" (click)="increment(1)">
+                                                        add</mat-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h2 class="font-size-14 font-semiBold pl-20 pt-2">Hours</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group space-between">
+                                <input class="form-control form-input col-md-2" name="review"
+                                    placeholder="Pick up point">
+                                <input class="form-control form-input col-md-2" name="review" placeholder="Drop point">
+                                <input class="form-control form-input col-md-2" name="review"
+                                    placeholder="Pick up time">
+                                <input class="form-control form-input col-md-2" name="review" placeholder="Drop time">
+                            </div>
+                        </form>
+                        <div class="proceed-button pt-30 pb-30">
+                            <button type="button" class="type-button btn btn-danger mt-20" matStepperNext>Save &
+                                Next</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <form>
+                    <ng-template matStepLabel>
+                        <mat-icon class="flag-icon">fiber_manual_record</mat-icon>
+                        <p class="details-type font-size-10 pt-5">Itinery</p>
+                    </ng-template>
+                    <div class="sub-section">
+                        <form name="add-product-main-form">
+                            <div class="group">
+                                <textarea class="form-control form-input text-area col-md-12 border-radius-10"
+                                    name="review" rows="4" cols="50"
+                                    placeholder="Describe overview about tour itinery..."></textarea>
+                            </div>
+                            <div class="type-1 scroll-active">
+                                <h2 class="font-size-14 font-semiBold col-md-12 ml-10 pt-20">Itinery</h2>
+                                <div class="group" *ngFor="let dayPlan of itineryDayPlanList;let i=index">
+                                    <input class="form-control form-input col-md-3 mr-30 ml-20 border-radius-10"
+                                        name="review" placeholder="Place">
+                                    <textarea class="form-control form-input text-area col-md-8 border-radius-10"
+                                        name="review" rows="4" cols="50" placeholder="Day Plan"></textarea>
+                                    <mat-icon class="add-icon ml-20" (click)="addItineryDayplan()" *ngIf="i==0"
+                                        #tooltip="matTooltip" matTooltip="Add Itinery">
+                                        add_circle_outline
+                                    </mat-icon>
+                                    <mat-icon class="add-icon ml-20" *ngIf="i>0" (click)="removeItineryDayplan(i)"
+                                        #tooltip="matTooltip" matTooltip="Remove Itinery">
+                                        remove_circle_outline
+                                    </mat-icon>
+                                </div>
+                            </div>
+                            <div class="type-1 mt-30">
+                                <div class="group space-between">
+                                    <div class="col-md-6">
+                                        <h2 class="font-size-14 font-semiBold col-md-12">Inclusions</h2>
+                                        <div class="col-md-12 inclusion-box">
+                                            <mat-checkbox class="example-margin col-md-6 pl-0">Stay</mat-checkbox>
+                                            <mat-checkbox class="example-margin col-md-6 pl-0">Entry Ticket
+                                            </mat-checkbox>
+                                            <mat-checkbox class="example-margin col-md-6 pl-0">Meals</mat-checkbox>
+                                            <mat-checkbox class="example-margin col-md-6 pl-0">Guide</mat-checkbox>
+                                            <mat-checkbox class="example-margin col-md-6 pl-0">Transport</mat-checkbox>
+                                            <mat-checkbox class="example-margin col-md-6 pl-0">Flight Ticket
+                                            </mat-checkbox>
+                                            <mat-checkbox class="example-margin col-md-6 pl-0">Pickup</mat-checkbox>
+                                            <mat-checkbox class="example-margin col-md-6 pl-0">Drop</mat-checkbox>
+                                            <mat-checkbox class="example-margin col-md-6 pl-0">Bus Ticket
+                                            </mat-checkbox>
+                                            <mat-checkbox class="example-margin col-md-6 pl-0">Activity</mat-checkbox>
+                                            <mat-checkbox class="example-margin col-md-6 pl-0">Local Vehicle
+                                            </mat-checkbox>
+                                            <mat-checkbox class="example-margin col-md-6 pl-0">Fresh up</mat-checkbox>
+                                            <mat-checkbox class="example-margin col-md-6 pl-0">Cruise Ticket
+                                            </mat-checkbox>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 scroll-active">
+                                        <h2 class="font-size-14 font-semiBold col-md-12">Other Inclusions</h2>
+                                        <div class="col-md-12 pb-20 inclusion-box " *ngFor="let inclusions of itineryInclusionsList;let j=index">
+                                            <input class="form-control form-input col-md-9 mr-30 border-radius-10"
+                                                name="review" placeholder="Medic Kit">
+                                            <mat-icon class="add-icon pl-25" (click)="addItineryInclusions()" *ngIf="j==0"
+                                                #tooltip="matTooltip" matTooltip="Add Inclusions">
+                                                add_circle_outline
+                                            </mat-icon>
+                                            <mat-icon class="add-icon pl-25" *ngIf="j>0"
+                                                (click)="removeItineryInclusions(j)" #tooltip="matTooltip"
+                                                matTooltip="Remove Inclusions">
+                                                remove_circle_outline
+                                            </mat-icon>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                        <div class="proceed-button pt-30 pb-30">
+                            <button type="button" class="type-button btn btn-danger mt-20" matStepperNext>Save &
+                                Next</button>
+                        </div>
+                        <h2 class="font-size-14 font-semiBold col-md-12 prev-button" matStepperPrevious>Back</h2>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <form>
+                    <ng-template matStepLabel>
+                        <mat-icon class="flag-icon">fiber_manual_record</mat-icon>
+                        <p class="details-type font-size-10 pt-5">Information</p>
+                    </ng-template>
+                    <div class="sub-section">
+                        <form name="add-product-main-form">
+                            <div class="group">
+                                <h2 class="font-size-14 font-semiBold col-md-2">Hotel</h2>
+                                <textarea class="form-control form-input text-area col-md-4 border-radius-10"
+                                    name="review" rows="4" cols="50" placeholder="Hotel Details..."></textarea>
+                                <mat-icon class="add-icon ml-20">add_circle_outline</mat-icon>
+                            </div>
+                            <div class="group">
+                                <h2 class="font-size-14 font-semiBold col-md-2">Meals</h2>
+                                <input class="form-control form-input col-md-4 mr-30 border-radius-10" name="review"
+                                    placeholder="Mention here">
+                            </div>
+                            <div class="group">
+                                <h2 class="font-size-14 font-semiBold col-md-2">Transportation</h2>
+                                <input class="form-control form-input col-md-4 mr-30 border-radius-10" name="review"
+                                    placeholder="Mention here">
+                            </div>
+                            <div class="group">
+                                <h2 class="font-size-14 font-semiBold col-md-2">Entry Ticket</h2>
+                                <input class="form-control form-input col-md-4 mr-30 border-radius-10" name="review"
+                                    placeholder="Mention here">
+                            </div>
+                            <div class="group">
+                                <h2 class="font-size-14 font-semiBold col-md-2">Train Ticket</h2>
+                                <input class="form-control form-input col-md-4 mr-30 border-radius-10" name="review"
+                                    placeholder="Mention here">
+                            </div>
+                            <div class="group">
+                                <h2 class="font-size-14 font-semiBold col-md-2">Flight Ticket</h2>
+                                <input class="form-control form-input col-md-4 mr-30 border-radius-10" name="review"
+                                    placeholder="Mention here">
+                            </div>
+                            <div class="group">
+                                <h2 class="font-size-14 font-semiBold col-md-2">Guide</h2>
+                                <input class="form-control form-input col-md-4 mr-30 border-radius-10" name="review"
+                                    placeholder="Mention here">
+                                <mat-icon class="add-icon ml-20">add_circle_outline</mat-icon>
+                            </div>
+                            <div class="group">
+                                <h2 class="font-size-14 font-semiBold col-md-2">Activities</h2>
+                                <input class="form-control form-input col-md-4 mr-30 border-radius-10" name="review"
+                                    placeholder="Mention here">
+                                <mat-icon class="add-icon ml-20">add_circle_outline</mat-icon>
+                            </div>
+                            <div class="group">
+                                <h2 class="font-size-14 font-semiBold col-md-2">Things to carry</h2>
+                                <input class="form-control form-input col-md-4 mr-30 border-radius-10" name="review"
+                                    placeholder="Mention here">
+                                <mat-icon class="add-icon ml-20">add_circle_outline</mat-icon>
+                            </div>
+                            <div class="group">
+                                <h2 class="font-size-14 font-semiBold col-md-2">Important Message</h2>
+                                <textarea class="form-control form-input text-area col-md-8" name="review" rows="4"
+                                    cols="50" placeholder="Type here..."></textarea>
+                            </div>
+                        </form>
+                        <div class="proceed-button pt-30 pb-30">
+                            <button type="button" class="type-button btn btn-danger mt-20" matStepperNext>Save &
+                                Next</button>
+                        </div>
+                        <h2 class="font-size-14 font-semiBold col-md-12 prev-button" matStepperPrevious>Back</h2>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <form>
+                    <ng-template matStepLabel>
+                        <mat-icon class="flag-icon">fiber_manual_record</mat-icon>
+                        <p class="details-type font-size-12 pt-5">Pricing & Departure</p>
+                    </ng-template>
+                    <div class="sub-section">
+                        <form name="add-product-main-form">
+                            <div class="type-1">
+                                <div class="group">
+                                    <h2 class="font-size-14 font-semiBold col-md-2">Pricing</h2>
+                                    <div class="select-group col-md-3 mr-20">
+                                        <mat-select value="perPerson" #pricing>
+                                            <mat-option value="perPerson">Per Person</mat-option>
+                                            <mat-option value="perGroup">Per Group</mat-option>
+                                        </mat-select>
+                                    </div>
+                                    <div class="select-group ml-20 col-md-2">
+                                        <mat-select value="INR" #priceStd>
+                                            <mat-option value="INR">INR</mat-option>
+                                            <mat-option value="EUR">EUR</mat-option>
+                                            <mat-option value="USD">USD</mat-option>
+                                        </mat-select>
+                                    </div>
+                                </div>
+                                <div class="group" *ngIf="pricing.value === 'perPerson'">
+                                    <h2 class="font-size-14 font-semiBold col-md-2">Adults</h2>
+                                    <div class="price-group col-md-10">
+                                        <input class="form-control form-input col-md-3 mr-10 border-radius-10"
+                                            name="review" placeholder="Actual Rate">
+                                        <p class="curr-type font-size-14 mt-5 allign-center">{{priceStd.value || 'INR'}}</p>
+                                        <input class="form-control form-input col-md-3 ml-30 border-radius-10"
+                                            name="review" placeholder="Commission">
+                                        <p class="curr-type font-size-16 mt-5 allign-center ml-30">=</p>
+                                        <input class="form-control form-input col-md-3 ml-30 border-radius-10"
+                                            name="review" placeholder="Agent Amount">
+                                        <p class="curr-type font-size-14 mt-5 allign-center ml-10">{{priceStd.value || 'INR'}}</p>
+                                    </div>
+                                </div>
+                                <div class="group" *ngIf="pricing.value === 'perPerson'">
+                                    <h2 class="font-size-14 font-semiBold col-md-2">Child</h2>
+                                    <div class="price-group col-md-10">
+                                        <input class="form-control form-input col-md-3 mr-10 border-radius-10"
+                                            name="review" placeholder="Actual Rate">
+                                        <p class="curr-type font-size-14 mt-5 allign-center">{{priceStd.value || 'INR'}}</p>
+                                        <input class="form-control form-input col-md-3 ml-30 border-radius-10"
+                                            name="review" placeholder="Commission">
+                                        <p class="curr-type font-size-16 mt-5 allign-center ml-30">=</p>
+                                        <input class="form-control form-input col-md-3 ml-30 border-radius-10"
+                                            name="review" placeholder="Agent Amount">
+                                        <p class="curr-type font-size-14 mt-5 allign-center ml-10">{{priceStd.value || 'INR'}}</p>
+                                    </div>
+
+                                </div>
+                                <div class="group" *ngIf="pricing.value === 'perPerson'">
+                                    <h2 class="font-size-14 font-semiBold col-md-2">Infant</h2>
+                                    <div class="price-group col-md-10">
+                                        <input class="form-control form-input col-md-3 mr-10 border-radius-10"
+                                            name="review" placeholder="Actual Rate">
+                                        <p class="curr-type font-size-14 mt-5 allign-center">{{priceStd.value || 'INR'}}</p>
+                                        <input class="form-control form-input col-md-3 ml-30 border-radius-10"
+                                            name="review" placeholder="Commission">
+                                        <p class="curr-type font-size-16 mt-5 allign-center ml-30">=</p>
+                                        <input class="form-control form-input col-md-3 ml-30 border-radius-10"
+                                            name="review" placeholder="Agent Amount">
+                                        <p class="curr-type font-size-14 mt-5 allign-center ml-10">{{priceStd.value || 'INR'}}</p>
+                                    </div>
+                                </div>
+                                <div class="group" *ngIf="pricing.value === 'perGroup'">
+                                    <h2 class="font-size-14 font-semiBold col-md-2">Group rate</h2>
+                                    <div class="price-group col-md-10">
+                                        <input class="form-control form-input col-md-3 mr-10 border-radius-10"
+                                            name="review" placeholder="Actual Rate">
+                                        <p class="curr-type font-size-14 mt-5 allign-center">{{priceStd.value || 'INR'}}</p>
+                                        <input class="form-control form-input col-md-3 ml-30 border-radius-10"
+                                            name="review" placeholder="Commission">
+                                        <p class="curr-type font-size-16 mt-5 allign-center ml-30">=</p>
+                                        <input class="form-control form-input col-md-3 ml-30 border-radius-10"
+                                            name="review" placeholder="Agent Amount">
+                                        <p class="curr-type font-size-14 mt-5 allign-center ml-10">{{priceStd.value || 'INR'}}</p>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="type-1 mt-20">
+                                <div class="group">
+                                    <h2 class="font-size-14 font-semiBold col-md-2">Kind of Tour</h2>
+                                    <div class="select-group col-md-3 mr-20">
+                                        <mat-select value="SeasonalTour" #tourKind>
+                                            <mat-option value="SeasonalTour">Seasonal Tour</mat-option>
+                                            <mat-option value="FixedDeparture">Fixed Departure</mat-option>
+                                            <mat-option value="Year">Year</mat-option>
+                                        </mat-select>
+                                    </div>
+                                </div>
+                                <div class="group" *ngIf="tourKind.value === 'SeasonalTour'">
+                                    <h2 class="font-size-14 font-semiBold col-md-2">Starts at</h2>
+                                    <div class="price-group col-md-10">
+                                        <mat-datepicker-toggle matSuffix [for]="picker" >
+                                        </mat-datepicker-toggle>
+                                        <input matInput [matDatepicker]="picker" readonly>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </div>
+                                </div>
+                                <div class="group" *ngIf="pricing.value === 'perPerson'">
+                                    <h2 class="font-size-14 font-semiBold col-md-2">Child</h2>
+                                    <div class="price-group col-md-10">
+                                        <input class="form-control form-input col-md-3 mr-10 border-radius-10"
+                                            name="review" placeholder="Actual Rate">
+                                        <p class="curr-type font-size-14 mt-5 allign-center">{{priceStd.value || 'INR'}}</p>
+                                        <input class="form-control form-input col-md-3 ml-30 border-radius-10"
+                                            name="review" placeholder="Commission">
+                                        <p class="curr-type font-size-16 mt-5 allign-center ml-30">=</p>
+                                        <input class="form-control form-input col-md-3 ml-30 border-radius-10"
+                                            name="review" placeholder="Agent Amount">
+                                        <p class="curr-type font-size-14 mt-5 allign-center ml-10">{{priceStd.value || 'INR'}}</p>
+                                    </div>
+
+                                </div>
+                                <div class="group" *ngIf="pricing.value === 'perPerson'">
+                                    <h2 class="font-size-14 font-semiBold col-md-2">Infant</h2>
+                                    <div class="price-group col-md-10">
+                                        <input class="form-control form-input col-md-3 mr-10 border-radius-10"
+                                            name="review" placeholder="Actual Rate">
+                                        <p class="curr-type font-size-14 mt-5 allign-center">{{priceStd.value || 'INR'}}</p>
+                                        <input class="form-control form-input col-md-3 ml-30 border-radius-10"
+                                            name="review" placeholder="Commission">
+                                        <p class="curr-type font-size-16 mt-5 allign-center ml-30">=</p>
+                                        <input class="form-control form-input col-md-3 ml-30 border-radius-10"
+                                            name="review" placeholder="Agent Amount">
+                                        <p class="curr-type font-size-14 mt-5 allign-center ml-10">{{priceStd.value || 'INR'}}</p>
+                                    </div>
+                                </div>
+                                <div class="group" *ngIf="pricing.value === 'perGroup'">
+                                    <h2 class="font-size-14 font-semiBold col-md-2">Group rate</h2>
+                                    <div class="price-group col-md-10">
+                                        <input class="form-control form-input col-md-3 mr-10 border-radius-10"
+                                            name="review" placeholder="Actual Rate">
+                                        <p class="curr-type font-size-14 mt-5 allign-center">{{priceStd.value || 'INR'}}</p>
+                                        <input class="form-control form-input col-md-3 ml-30 border-radius-10"
+                                            name="review" placeholder="Commission">
+                                        <p class="curr-type font-size-16 mt-5 allign-center ml-30">=</p>
+                                        <input class="form-control form-input col-md-3 ml-30 border-radius-10"
+                                            name="review" placeholder="Agent Amount">
+                                        <p class="curr-type font-size-14 mt-5 allign-center ml-10">{{priceStd.value || 'INR'}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="proceed-button pt-30 pb-30">
+                            <button type="button" class="type-button btn btn-danger mt-20" matStepperNext>Save &
+                                Next</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <form>
+                    <ng-template matStepLabel>
+                        <mat-icon class="flag-icon">fiber_manual_record</mat-icon>
+                        <p class="details-type font-size-10 pt-5">Cancellation Policy</p>
+                    </ng-template>
+                    <div class="sub-section pt-20">
+                        <div class="type-1 mt-30">
+                            <form name="add-product-main-form">
+                                <div class="group">
+                                    <h2 class="font-size-14 font-semiBold col-md-3 ml-10">If cancelled before 30 days
+                                    </h2>
+                                    <input class="form-control form-input col-md-3 border-radius-10" name="review"
+                                        placeholder="20% Refund">
+                                </div>
+                                <div class="group">
+                                    <h2 class="font-size-14 font-semiBold col-md-3 ml-10">If cancelled before 15 days
+                                    </h2>
+                                    <input class="form-control form-input col-md-3 border-radius-10" name="review"
+                                        placeholder="20% Refund">
+                                </div>
+                                <div class="group">
+                                    <h2 class="font-size-14 font-semiBold col-md-3 ml-10">If cancelled before 7 days
+                                    </h2>
+                                    <input class="form-control form-input col-md-3 border-radius-10" name="review"
+                                        placeholder="20% Refund">
+                                </div>
+                                <div class="group">
+                                    <h2 class="font-size-14 font-semiBold col-md-3 ml-10">If cancelled before 2 - 7 days
+                                    </h2>
+                                    <input class="form-control form-input col-md-3 border-radius-10" name="review"
+                                        placeholder="20% Refund">
+                                </div>
+                                <div class="group">
+                                    <h2 class="font-size-14 font-semiBold col-md-3 ml-10">If cancelled before 1 days
+                                    </h2>
+                                    <input class="form-control form-input col-md-3 border-radius-10" name="review"
+                                        placeholder="20% Refund">
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="proceed-button pt-30 pb-30">
+                            <button type="button" class="type-button btn btn-danger mt-20" matStepperNext>Save &
+                                Next</button>
+                        </div>
+                        <h2 class="font-size-14 font-semiBold col-md-12 prev-button" matStepperPrevious>Back</h2>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <form>
+                    <ng-template matStepLabel>
+                        <mat-icon class="flag-icon">fiber_manual_record</mat-icon>
+                        <p class="details-type font-size-10 pt-5">Faq</p>
+                    </ng-template>
+                    <div class="sub-section">
+                        <div class="type-1">
+                            <form name="add-product-main-form">
+                                <h2 class="font-size-14 col-md-12 font-semiBold pt-30 ml-20">Frequently Added Questions
+                                </h2>
+                                <div class="group">
+                                    <input class="form-control form-input col-md-10 ml-30 border-radius-10"
+                                        name="review" placeholder="Question ?">
+                                    <mat-icon class="add-icon ml-20">add_circle_outline</mat-icon>
+                                    <textarea
+                                        class="form-control form-input text-area col-md-10 mt-20 ml-30 border-radius-10"
+                                        name="review" rows="4" cols="50" placeholder="Answer..."></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="proceed-button pt-30 pb-30">
+                            <button type="button" class="type-button btn btn-danger mt-20" matStepperNext>Save &
+                                Next</button>
+                        </div>
+                        <h2 class="font-size-14 font-semiBold col-md-12 prev-button" matStepperPrevious>Back</h2>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <form>
+                    <ng-template matStepLabel>
+                        <mat-icon class="flag-icon">fiber_manual_record</mat-icon>
+                        <p class="details-type font-size-10 pt-5">Finish</p>
+                    </ng-template>
+                    <div class="sub-section">
+                        <div class="type-1 pb-30 mt-30">
+                            <div class="finish-circle">
+                                <mat-icon class="font-size-200">check_circle_outline</mat-icon>
+                            </div>
+                            <h2 class="font-size-36 col-md-12 font-semiBold pt-30 ml-20 text-center">Great!</h2>
+                            <h2 class="font-size-20 col-md-12 font-semiBold pt-30 ml-20 text-center">Successfully
+                                published your
+                                product</h2>
+                            <div class="proceed-button pt-30 pb-30">
+                                <button type="button" class="type-button btn btn-danger mt-20">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+</div>

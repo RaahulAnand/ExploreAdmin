@@ -1,0 +1,18 @@
+/***************************************
+* Responsive Code
+****************************************/
+
+@media only screen and (max-width: 600px) {
+    .header-title{
+        padding-top: 30% !important;
+    }
+    .box-layout {
+        width: auto !important;
+    }
+    .remember-section {
+        flex-direction: column;;
+        .checkbox{
+            padding: 10px 0px;
+        }
+    }
+}

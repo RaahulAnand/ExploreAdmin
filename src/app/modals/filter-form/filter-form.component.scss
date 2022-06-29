@@ -1,0 +1,28 @@
+@import "../../../assets/scss/functions";
+@import "../../../assets/scss/variables";
+.filter-section {
+    display: inline-block;
+    width: 300px !important;
+    p {
+        align-self: center;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    button.btn {
+        width: 30%;
+        height: 35px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .filter-heading {
+        @include FlexLayout(row, space-between, unset);
+        .btn {
+            @include BorderRadius(25px, 25px, 25px, 25px);
+        }
+    }
+    .catogery-box,
+    .filter-heading {
+        @include BorderRadius(25px, 25px, 25px, 25px);
+        background-color: $white;
+    }
+}

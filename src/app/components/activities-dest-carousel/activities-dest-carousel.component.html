@@ -1,0 +1,22 @@
+<div class="cities-carousel pt-50">
+    <div class="container">
+        <div class="cities-heading">
+            <!-- <h2 class="heading-title pt-15 font-size-28">{{headings.title}}</h2> -->
+            <h2 class="heading-title pt-15 pb-20 font-size-28 text-color-1">{{'Explore Activities In Kerala'}}</h2>
+        </div>
+    </div>
+    <div class="cities-modify" [ngClass]="headings.itemClass || 'normal'">
+        <div class="cities-item swiper-container container pt-26">
+            <div class="swiper-wrapper h-100">
+                <div *ngFor="let cities of citiesList" class="swiper-slide col-md-3 col-xs-12 col-sm-6 pr-20">
+                    <div class="cities-img ">
+                        <a class="cities-link">
+                            <img class="cities-images" [src]="cities.imgLoc" alt="product.sku">
+                        </a>
+                        <p class="cities-name font-size-24 font-extraBold">{{cities.name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

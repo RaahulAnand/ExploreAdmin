@@ -1,0 +1,25 @@
+<div class="cities-carousel container pt-50 pb-50">
+    <div class="cities-item swiper-container pt-26 h-100" [swiper]="config">
+        <div class="swiper-wrapper h-100">
+            <div *ngFor="let ads of adsList" class="swiper-slide col-md-12 col-xs-12 col-sm-12 pr-20">
+                <div [attr.data-background]="ads.imgLoc" class="slide-item swiper-lazy">
+                    <div class="container sl-wrap">
+                        <div class="content">
+                            <p class="title m-0 ">{{ads.title || 'Dive Into another'}}<br>{{ads.subTitle || 'Relm'}}</p>
+                            <!-- <p class="sub-title m-0 "></p> -->
+                            <div class="book-button">
+                                <button type="button" class="btn btn-danger font-size-20 font-extraBold">Explore more</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button mat-mini-fab class="swiper-button-prev swiper-button left-button">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <button mat-mini-fab class="swiper-button-next swiper-button">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+    </div>
+</div>

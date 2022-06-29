@@ -1,0 +1,209 @@
+<div class="xplore-places">
+    <div class="heading-section">
+        <div class="container pt-80">
+            <p class="heading-title font-size-80 mb-0 font-extraBold">Explore {{cityName}}</p>
+        </div>
+    </div>
+    <div class="main-content container pt-30">
+        <div class="top-headings">
+            <div class="heading-button mt-10 mb-10 ">
+                <button type="button" class="btn btn-danger font-semiBold heading_button mb-5">Attractions
+                    ({{'99'}})</button>
+                <button type="button" class="btn btn-danger font-semiBold heading_button mb-5">Activities
+                    ({{'99'}})</button>
+                <button type="button" class="btn btn-danger font-semiBold heading_button mb-5">Stays ({{'99'}})</button>
+                <button type="button" class="btn btn-danger font-semiBold heading_button mb-5">Restaturants
+                    ({{'99'}})</button>
+                <button type="button" class="btn btn-danger font-semiBold heading_button mb-5">Packages
+                    ({{'99'}})</button>
+            </div>
+        </div>
+        <div class="filter-responsive">
+            <button type="button" class="btn btn-danger filter-button mb-5" (click)="openFilter()"> <i
+                    class="fa fa-filter font-size-20 pr-20" aria-hidden="true"></i>Filter</button>
+        </div>
+        <div class="filter-destination-section">
+            <!-- <div class="filter-section col-md-3 pt-10">
+                <div class="filter-heading pt-5 pb-5 pl-20 pr-20">
+                    <p class="filter-title m-0">Filter</p>
+                    <button type="button" class="btn btn-danger" (click)="resetForm()">Reset</button>
+                </div>
+                <form [formGroup]="filterForm" novalidate>
+                    <div class="catogery-box mt-10 pt-10 pb-10">
+                        <p class="filter-title m-0 pb-20 pt-5 pl-20 pr-20">Catogery</p>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour" formControlName="groupTour">
+                            <p class="title">Group Tour</p>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="induividualTour"
+                                formControlName="induividualTour">
+                            <p class="title">Induividual Tour</p>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="conductingTour"
+                                formControlName="conductingTour">
+                            <p class="title">Conducting Tour</p>
+                        </div>
+                    </div>
+                    <div class="catogery-box mt-10 pt-10 pb-10">
+                        <p class="filter-title m-0 pb-20 pt-5 pl-20 pr-20">Duration</p>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour" formControlName="hourly">
+                            <p class="title">0 - 5 Hours</p>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour" formControlName="halfDay">
+                            <p class="title">Half Day</p>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour" formControlName="fullDay">
+                            <p class="title">Full Day</p>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour" formControlName="multiDay">
+                            <p class="title">Multi Day</p>
+                        </div>
+                    </div>
+                    <div class="catogery-box mt-10 pt-10 pb-10">
+                        <p class="filter-title m-0 pb-20 pt-5 pl-20 pr-20">Price Range</p>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour">
+                            <p class="title">0 - 999</p>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour">
+                            <p class="title">1000 - 4999</p>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour">
+                            <p class="title">5000 - 9999</p>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour">
+                            <p class="title">10000 - 49999</p>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour">
+                            <p class="title">50K +</p>
+                        </div>
+                    </div>
+                    <div class="catogery-box mt-10 pt-10 pb-10">
+                        <p class="filter-title m-0 pb-20 pt-5 pl-20 pr-20">Star Rating</p>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour">
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour">
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour">
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour">
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour">
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                        </div>
+                    </div>
+                    <div class="catogery-box mt-10 pt-10 pb-10">
+                        <p class="filter-title m-0 pb-20 pt-5 pl-20 pr-20">Extras</p>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour">
+                            <p class="title">Sightseeing</p>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour">
+                            <p class="title">Adventure</p>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour">
+                            <p class="title">Luxury</p>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour">
+                            <p class="title">Honey Moon</p>
+                        </div>
+                        <div class="checkbox pl-38">
+                            <input type="checkbox" class="form-check-input" id="groupTour">
+                            <p class="title">Activities Included</p>
+                        </div>
+                    </div>
+                </form>
+            </div> -->
+            <div class="filter-pane" [ngClass]="filterOpen || ''">
+                <app-filter-form></app-filter-form>
+            </div>
+            <div class="cities-item col-md-9 pt-10">
+                <div class="swiper-wrapper">
+                    <div *ngFor="let i = index;let cities of destinationsList | slice: 0:9 
+                    | paginate: { itemsPerPage: 9, currentPage: page, totalItems : totalRecords  }"
+                        class="swiper-slide col-md-4 col-xs-12 col-sm-6 pr-20 mb-20">
+                        <div class="cities-img">
+                            <a class="cities-link">
+                                <img class="cities-detail-images" [src]="cities.imgLoc" alt="product.sku">
+                            </a>
+                            <div class="day-night">
+                                <mat-icon class="font-size-20">update</mat-icon>
+                                <p class=" font-size-12">1D-1N</p>
+                            </div>
+                            <div class="featured">
+                                <p class=" font-size-12">Featured</p>
+                            </div>
+                        </div>
+                        <div class="details pt-15">
+                            <p class="m-0">Boating at Kuttanad </p>
+                            <p class="m-0">with local dishes</p>
+                            <div class="stars pt-5  pb-5">
+                                <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate
+                                </mat-icon>
+                                <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate
+                                </mat-icon>
+                                <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate
+                                </mat-icon>
+                                <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate
+                                </mat-icon>
+                                <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate
+                                </mat-icon>
+                            </div>
+                            <div class="details-bottom pb-10">
+                                <div class="details-price">
+                                    <p class="m-0 original-price font-size-12">{{'1999' | currency:'INR'}}</p>
+                                    <p class="m-0 discounted-price">{{'999' | currency:'INR'}}</p>
+                                </div>
+                                <div class="book-button">
+                                    <button type="button" class="btn btn-danger"
+                                        (click)="booking(cities,i)">Book</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="explore-button mt-30">
+                    <pagination-controls class="product-pagination" autoHide="true" maxSize="5"
+                        (pageChange)="onPageChanged($event)"></pagination-controls>
+                    <!-- <button type="button" class="btn btn-danger ">EXPLORE MORE</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-cities-explore-carousel [(itemList)]="cityList"></app-cities-explore-carousel>
+    <app-cities-explore-carousel [(itemList)]="activityList"></app-cities-explore-carousel>
+    <app-attractions></app-attractions>
+
+    <!-- <app-footer></app-footer> -->

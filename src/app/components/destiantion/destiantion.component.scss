@@ -1,0 +1,80 @@
+@import "../../../assets/scss/functions";
+@import "../../../assets/scss/variables";
+.package-section {
+    background-color: $gray-lighter;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    .package {
+        .title h3 {
+            padding-top: 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border: 1px solid #dee2e6;
+            thead {
+                background-color: $grey-light2;
+                tr>th {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+            }
+            tbody {
+                tr {
+                    cursor: pointer;
+                }
+                tr:nth-child(even) {
+                    background-color: #e9e9e9;
+                }
+            }
+        }
+        .Pagiantion {
+            @include FlexLayout(row, space-between, center);
+            .leftPaginate>h4 {
+                font-size: 16px;
+            }
+        }
+        .destinationList {
+            overflow-y: scroll;
+            height: calc(100vh - 200px);
+        }
+    }
+    .proceed-button {
+        text-align: center;
+        display: contents;
+        button {
+            border-radius: 25px;
+            border: none;
+            font-weight: 600;
+            background: $button-gradient-regular;
+            width: 15%;
+        }
+    }
+    .select-group {
+        h2 {
+            text-align: center;
+            padding-top: 5px;
+            color: $white;
+            height: 11px;
+        }
+        border: 1px solid $button-gradient-regular;
+        border-radius: 10px;
+        background-color: $button-gradient-regular;
+        height: 44px;
+    }
+    .country-dropdown {
+        @include FlexLayout(row, flex-start, center);
+    }
+    .country-option,
+    .state-option {
+        display: contents;
+        .type-button:focus {
+            box-shadow: none !important;
+            border: 1px solid $button-gradient-regular;
+        }
+    }
+}

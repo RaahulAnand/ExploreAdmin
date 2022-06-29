@@ -1,0 +1,24 @@
+@import "../../../assets/scss/functions";
+
+.name-style-activity {
+    transform: translateY(-30px) !important;
+    background: rgba(0, 0, 0, 0.2);
+    @include BorderRadius(0, 0, 20px, 20px);
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    margin: 0 1px 0 2px;
+}
+
+/***************************************
+* Responsive Code
+****************************************/
+
+@media only screen and (max-width: 700px) {
+    // .cities-images {
+    //     width: 300px !important;
+    // }
+    .name-style-activity {
+        // margin: 0 15px !important;
+        // background: none !important;
+    }
+}

@@ -1,0 +1,54 @@
+@import "../../../../assets/scss/functions";
+@import "../../../../assets/scss/variables";
+.others-section {
+    background-color: $gray-lighter;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    .others {
+        .title h3 {
+            padding-top: 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .addUpdate-form {
+            margin-left: auto;
+            background: #fff;
+            padding: 30px;
+            width: 32rem;
+            margin-right: auto;
+            border-radius: 20px;
+            .imageList {
+                display: flex;
+                flex-wrap: wrap;
+                max-height: 300px;
+                overflow-y: scroll;
+                cursor: pointer;
+                .warning-message {
+                    color: red;
+                    font-size: 12px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    button {
+        width: 100%;
+    }
+}
+
+.form-input {
+    border: 1px solid #80bdff;
+}
+
+.select-group {
+    border: 1px solid $button-gradient-regular;
+    border-radius: 10px;
+    background-color: $button-gradient-regular;
+    height: 40px;
+}
+
+.country-dropdown {
+    @include FlexLayout(row, center, center);
+}

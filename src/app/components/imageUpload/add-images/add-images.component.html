@@ -1,0 +1,30 @@
+<div class="others-section">
+    <div class="others container ">
+        <div class="title pt-10">
+            <h3>Upload Images</h3>
+        </div>
+        <div class="pt-10">
+            <div class="addUpdate-form">
+                <form name="addUpdateCountry" [formGroup]="imageUploadForm" (ngSubmit)="uploadImages()" novalidate>
+                    <div class="input-row pb-20">
+                        <label for="images">Images To Upload ( Max 5 images )</label>
+                        <input class="form-control form-input col-md-12 image-input" formControlName="file" id="file" type="file" multiple="" (change)="onFileChange($event)">
+                    </div>
+                    <div class="image-names pb-20">
+                        <label for="images">Image Names( To be displayed )</label>
+                        <input type="text" class="form-control form-input col-md-12 mt-10 mb-10 image-input" *ngFor="let name of imageNames, let i=index" [value]="name" #imageName (keyup)="changeName(imageName.value,i)">
+                    </div>
+                    <div class="input-row pb-20">
+                        <label for="email">Image Selection</label>
+                        <input class="form-control form-input col-md-12" type="text" name="imageSelection" formControlName="imageFileName" disabled>
+                    </div>
+                    <div *ngIf="imagesToshow.length">
+                        <img *ngFor='let url of imagesToshow' [src]="url" height="150" width="200px" style="margin: 3px;"> <br/>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-20 mb-20">Add Images</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

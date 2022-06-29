@@ -1,0 +1,68 @@
+<div class="xplore-homepage">
+    <div class="search-section">
+        <div class="container pt-80">
+            <p class="section-title font-size-100 font-thin mb-0">explore & discover!</p>
+            <p class="section-subtitle font-size-30 font-medium mb-0">the world you have never seen</p>
+            <div class="tab-group pt-100">
+                <ul class="nav nav-tabs">
+                    <li *ngFor="let tabs of homePageTabs; let i = index;" [ngClass]="{'active': selectedItem == tabs}"
+                        (click)="changeTabs($event, tabs)">
+                        <div class="headings mt-10">
+                            <i [class]="tabs.icon" aria-hidden="true" *ngIf="i > 0"></i>
+                            <a [class]="tabs.style">{{tabs.headingName}}</a>
+                            <i [class]="tabs.icon" aria-hidden="true" *ngIf="i === 0"></i>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="autocomplete-searchBox">
+                <div class="input-group pb-100">
+                    <input type="text"
+                        class="form-control form-input search-bar pl-30 setHeight-70 font-size-24 font-regular"
+                        [placeholder]="selectedItem.placeholder" name="search" #inputValue>
+                    <div class="input-group-btn search-button">
+                        <button class="btn btn-default pt-16" type="submit" (click)="goToState(inputValue)"><i
+                                class="fa fa-search font-size-30" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                <div class="autocomplete-list">
+                    <ul>
+                        <li class="font-size-20 font-regular">India</li>
+                        <li class="font-size-20 font-regular">China</li>
+                        <li class="font-size-20 font-regular">Burma</li>
+                        <li class="font-size-20 font-regular">Goa</li>
+                        <li class="font-size-20 font-regular">USA</li>
+                        <li class="font-size-20 font-regular">EAST</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bottom-misc pt-100">
+                <div class="misc-heading">
+                    <i class="fa fa-globe font-size-40" aria-hidden="true"></i>
+                    <p class="misc-text">25+ <br>Countries</p>
+                </div>
+                <div class="misc-heading">
+                    <i class="fa fa-globe font-size-40" aria-hidden="true"></i>
+                    <p class="misc-text">10000+ <br>Travel Experience</p>
+                </div>
+                <div class="misc-heading">
+                    <i class="fa fa-globe font-size-40" aria-hidden="true"></i>
+                    <p class="misc-text">Best Price<br>Guarenteed</p>
+                </div>
+                <div class="misc-heading">
+                    <i class="fa fa-globe font-size-40" aria-hidden="true"></i>
+                    <p class="misc-text">3 Million<br>Users per annum</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-cities-explore-carousel [(itemList)]="cityList"></app-cities-explore-carousel>
+    <app-destination-details [(heading)]="destinationHeading"></app-destination-details>
+    <ads-carousel></ads-carousel>
+    <app-cities-explore-carousel [(itemList)]="destList"></app-cities-explore-carousel>
+    <app-activities-dest-carousel [(activityList)]="cityList"></app-activities-dest-carousel>
+    <app-attractions></app-attractions>
+</div>
+<!-- <app-footer></app-footer> -->

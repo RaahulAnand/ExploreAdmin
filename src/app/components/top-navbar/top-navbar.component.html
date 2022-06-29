@@ -1,0 +1,47 @@
+<div class="xplore-header">
+    <div class="xplore-container">
+        <div class="xplore-header-logo col-md-2" (click)="goToHome()">
+            <h2 class="logo-title font-regular font-size-24"><b class="font-semiBold">e<img [src]="xploreLogo"
+                        id="xplore_logo" class="logo-class setHeight-16">plore</b>world</h2>
+        </div>
+        <div class="xplore-middle-set col-md-7">
+            <div class="select-agent col-md-2">
+                <mat-select value="perGroup">
+                    <mat-option value="perGroup">ABC Group</mat-option>
+                    <mat-option value="perPerson">Per Person</mat-option>
+                </mat-select>
+            </div>
+        </div>
+        <div class="xlpore-header-right col-md-3">
+            <div class='searchInput'>
+                <input class="form-control form-input search-input col-md-12 mt-10 mr-10" name="review"
+                    placeholder="Search">
+                <mat-icon class='search-icon'>search</mat-icon>
+            </div>
+
+            <button mat-button aria-label="Account" class="dropdown-button">
+                <mat-icon matBadge="2">mail_outline</mat-icon>
+            </button>
+            <button mat-button aria-label="Account" class="dropdown-button">
+                <mat-icon matBadge="2">notifications_none</mat-icon>
+            </button>
+            <button mat-button [matMenuTriggerFor]="menu" aria-label="Account" class="dropdown-button">
+                <mat-icon class="mr-5">person_outline</mat-icon> User
+            </button>
+            <mat-menu #menu="matMenu">
+                <button class="dropdown-button " mat-menu-item>
+                    <p class="font-size-14">Profile</p>
+                </button>
+                <button class="dropdown-button" mat-menu-item>
+                    <p class="font-size-14">Settings</p>
+                </button>
+                <button class="dropdown-button" mat-menu-item>
+                    <p class="font-size-14">Help & Support</p>
+                </button>
+                <button class="dropdown-button" (click)="logoutUser()" mat-menu-item>
+                    <p class="font-size-14">Logout</p>
+                </button>
+            </mat-menu>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,196 @@
+<div class="booking-description-section pt-100">
+    <div class="booking-section">
+        <div class="booking-description container col-md-12 pt-50 pb-50">
+            <div class="image-section col-md-6 ">
+                <div class="cities-img">
+                    <img class="cities-detail-images" src="../../../assets/images/booking_Boating_Kuttanad.jpg"
+                        alt="product.sku">
+                    <div class="image-desc">
+                        <div class="day-night">
+                            <mat-icon class="font-size-22">update</mat-icon>
+                            <p class=" font-size-14 m-0">1D-1N</p>
+                        </div>
+                        <div class="featured">
+                            <p class=" font-size-14 m-0">Featured</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="description col-md-6">
+                <h2 class="desc-heading font-size-24 bottom-line pt-20 pb-10">Boating At Kuttanad</h2>
+                <div class="specification bottom-line pb-10">
+                    <mat-icon class="font-size-22">wb_sunny</mat-icon>
+                    <p class=" font-size-12 m-0 pl-5 pr-15 pt-2 bottom-line-right">3 Days</p>
+                    <mat-icon class="font-size-22 pl-10">nights_stay</mat-icon>
+                    <p class=" font-size-12 m-0 pl-15 pr-5 pt-2">2 Nights</p>
+                </div>
+                <div class="rating-section">
+                    <div class="stars pt-15 pb-5">
+                        <mat-icon class="mat-icon-xs mat-icon">star_rate
+                        </mat-icon>
+                        <mat-icon class="mat-icon-xs mat-icon">star_rate
+                        </mat-icon>
+                        <mat-icon class="mat-icon-xs mat-icon">star_rate
+                        </mat-icon>
+                        <mat-icon class="mat-icon-xs mat-icon">star_rate
+                        </mat-icon>
+                        <mat-icon class="mat-icon-xs mat-icon">star_rate
+                        </mat-icon>
+                    </div>
+                    <p class="reviews m-0 pt-15 font-size-14">2 Reviews</p>
+                    <!-- <a class="reviews m-0 pt-15 font-size-14" href="#reviews-section">2 Reviews</a> -->
+                    <p class="rating-number m-0 font-size-14">4.0</p>
+                </div>
+                <p class="misc-letter m-0 font-size-14">starting from</p>
+                <h2 class="price-adult pt-5 font-size-24">{{'2000' | currency : 'INR'}} per Adult</h2>
+                <button type="button" class="type-button btn btn-danger mt-20 mb-20">Conducting Tour</button>
+                <div class="head-count font-size-14">
+                    <div class="count-section" *ngFor="let type of headCount;let i= index;">
+                        <p class="head-title m-0 pr-10 font-size-14 font-medium">{{type.name}}</p>
+                        <div class="counters">
+                            <mat-icon class="font-size-14 pt-3" (click)="decrement(type.type)">remove</mat-icon>
+                            <input type="text" name="quantity" value="{{type.count}}"
+                                class="form-control input-number font-size-12" readonly>
+                            <mat-icon class="font-size-14 pt-3 pl-3" (click)="increment(type.type)">add</mat-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="explore-button">
+                    <button type="button" class="btn btn-danger font-extraBold font-size-24" (click)="booking()">BOOK NOW</button>
+                </div>
+            </div>
+            <div class="left-pane-details col-md-6 mt-20">
+                <div class="inclusive-details">
+                    <h4 class="heading-inc pt-10 pl-20 font-size-16 font-semiBold">Boating At Kuttanad includes </h4>
+                    <div class="details-inc">
+                        <div>
+                            <mat-icon class="font-size-26 pt-3">local_dining</mat-icon>
+                            <p class="sub-heding-inc font-size-12 font-medium">Meals</p>
+                        </div>
+                        <div>
+                            <mat-icon class="font-size-26 pt-3">local_taxi</mat-icon>
+                            <p class="sub-heding-inc font-size-12 font-medium">Taxi</p>
+                        </div>
+                        <div>
+                            <mat-icon class="font-size-26 pt-3">local_dining</mat-icon>
+                            <p class="sub-heding-inc font-size-12 font-medium">Meals</p>
+                        </div>
+                        <div>
+                            <mat-icon class="font-size-26 pt-3">local_dining</mat-icon>
+                            <p class="sub-heding-inc font-size-12 font-medium">Accomdation</p>
+                        </div>
+                        <div>
+                            <mat-icon class="font-size-26 pt-3">local_taxi</mat-icon>
+                            <p class="sub-heding-inc font-size-12 font-medium">Guide</p>
+                        </div>
+                        <div>
+                            <mat-icon class="font-size-26 pt-3">local_dining</mat-icon>
+                            <p class="sub-heding-inc font-size-12 font-medium">Entry Ticket</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="overview-section pl-20 mt-20 pb-20">
+                    <span class="left-design font-size-22"> |</span>
+                    <h4 class="heading-overview-sec pt-20 font-semiBold font-size-16 pb-10 pl-10">Overview </h4>
+                    <div>
+                        <p class="paragraph m-0 font-medium" [ngClass]="overViewTab ? 'tab-open' : 'tab-close'">{{dummyContent}}</p>
+                        <p class="explore-button font-size-12 font-medium" (click)=openTab(1)>Explore More</p>
+                    </div>
+                    <span class="left-design font-size-22"> |</span>
+                    <h4 class="heading-overview-sec pt-20 font-semiBold font-size-16 pb-10 pl-10">Itinery </h4>
+                    <div>
+                        <p class="paragraph m-0 font-medium" [ngClass]="itineryTab ? 'tab-open' : 'tab-close'">{{dummyContent}}</p>
+                        <p class="explore-button font-size-12 font-medium" (click)=openTab(2)>Explore More</p>
+                    </div>
+                    <span class="left-design font-size-22"> |</span>
+                    <h4 class="heading-overview-sec pt-20 font-semiBold font-size-16 pb-10 pl-10">Inclusions </h4>
+                    <div>
+                        <p class="paragraph m-0 font-medium" [ngClass]="inclusionTab ? 'tab-open' : 'tab-close'">{{dummyContent}}
+                        </p>
+                        <p class="explore-button font-size-12 font-medium" (click)=openTab(3)>Explore More</p>
+                    </div>
+                    <span class="left-design font-size-22"> |</span>
+                    <h4 class="heading-overview-sec pt-20 font-semiBold font-size-16 pb-10 pl-10">Exclusions </h4>
+                    <div>
+                        <p class="paragraph m-0 font-medium" [ngClass]="exclusionTab ? 'tab-open' : 'tab-close'">{{dummyContent}}
+                        </p>
+                        <p class="explore-button font-size-12 font-medium" (click)=openTab(4)>Explore More</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="right-pane-details col-md-6 mt-20">
+                <div class="faq-section pl-20 pb-20 pr-20">
+                    <h4 class="heading-inc pt-10  font-size-16 pb-10 bottom-line font-semiBold">Frequently Asked Questions? </h4>
+                    <div class="">
+                        <p class="ques m-0 font-medium"><b>?</b> Is Accomdation Available</p>
+                        <p class="answer font-medium"><b>Ans :</b> Yes</p>
+                    </div>
+                    <div class="">
+                        <p class="ques m-0 font-medium"><b>?</b> Is Accomdation Available</p>
+                        <p class="answer font-medium"><b>Ans :</b> Yes</p>
+                    </div>
+                    <div class="">
+                        <p class="ques m-0 font-medium"><b>?</b> Is Accomdation Available</p>
+                        <p class="answer font-medium" ><b>Ans :</b> Yes</p>
+                    </div>
+                    <div class="">
+                        <p class="ques m-0 font-medium"><b>?</b> Is Accomdation Available</p>
+                        <p class="answer font-medium"><b>Ans :</b> Yes</p>
+                    </div>
+                </div>
+                <div class="supplier-details mt-20 pl-20 pb-20 pr-20">
+                    <h4 class="heading-inc pt-10 pb-10 font-size-16 bottom-line font-semiBold">Supplier</h4>
+                    <div class="supplier">
+                        <img src="../../../assets/images/profile_pic/profile1.png" class="supplier-image">
+                        <h4 class="supplier-name font-size-20">STEVE SMITH 100</h4>
+                    </div>
+                </div>
+                <div class="review-details mt-20 pl-20 pb-20 pr-20" id="reviews-section">
+                    <h4 class="heading-inc pt-10 pb-10 font-size-16 bottom-line font-semiBold">Reviews</h4>
+                    <div class="review-section">
+                        <img src="../../../assets/images/profile_pic/profile1.png" class="supplier-image">
+                        <h4 class="supplier-name font-size-20">STEVE</h4>
+                        <div class="review-rating">
+                            <p class="rating-number m-0 font-size-14">4.0</p>
+                        </div>
+                    </div>
+                    <div class="review-para-section pb-20">
+                        <p class="paragraph m-0" [ngClass]="overViewTab ? 'tab-open' : 'tab-close'">{{dummyContent}}
+                        </p>
+                        <p class="read-button font-size-14 pl-4" (click)=openTab(1)>Read More</p>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-section col-md-12 mt-20 pl-20 pb-20">
+                <h4 class="comment-heading pt-10 pb-10 font-size-16 font-semiBold">Your Rating</h4>
+                <div class="stars pt-5 pb-10">
+                    <mat-icon class="mat-icon-xs mat-icon">star_rate
+                    </mat-icon>
+                    <mat-icon class="mat-icon-xs mat-icon">star_rate
+                    </mat-icon>
+                    <mat-icon class="mat-icon-xs mat-icon">star_rate
+                    </mat-icon>
+                    <mat-icon class="mat-icon-xs mat-icon">star_rate
+                    </mat-icon>
+                    <mat-icon class="mat-icon-xs mat-icon">star_rate
+                    </mat-icon>
+                </div>
+                <!-- <div id="rating_bar">
+                    <span id="rate_1"></span>
+                    <span id="rate_2"></span>
+                    <span id="rate_3"></span>
+                    <span id="rate_4"></span>
+                    <span id="rate_5"></span>
+                </div> -->
+                <textarea class="form-control form-input" name="review" rows="4" cols="50"
+                    placeholder="Please write your experience at this destination..."></textarea>
+                <button type="button" class="btn btn-danger submit_button mb-5">Submit</button>
+            </div>
+        </div>
+        <app-cities-explore-carousel [(itemList)]="cityList"></app-cities-explore-carousel>
+        <app-cities-explore-carousel [(itemList)]="activityList"></app-cities-explore-carousel>
+        <app-attractions></app-attractions>
+    </div>
+</div>
+<!-- <app-footer></app-footer> -->

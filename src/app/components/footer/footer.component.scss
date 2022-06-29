@@ -1,0 +1,40 @@
+@import "../../../assets/scss/functions";
+@import "../../../assets/scss/variables";
+
+.xplore-footer {
+    background: $footer-background;
+    .footer,
+    .footer-middle {
+        @include FlexLayout(row, space-between, center);
+    }
+    &.footer-none {
+        display: none !important;
+    }
+    .footer {
+        min-height: 100px;
+        .footer-middle > p {
+            font-size: 14px;
+            color: $white;
+            cursor: pointer;
+            &:focus {
+                outline: none;
+            }
+        }
+        .title {
+            padding: 0px 20px;
+        }
+    }
+}
+
+/***************************************
+* Responsive Code
+****************************************/
+@media only screen and (max-width: 600px) {
+    .xplore-footer {
+        .footer,
+        .footer-middle {
+            flex-direction: column;
+            padding: 30px 0px !important;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<div class="others-display-section">
+    <div class="others-display container ">
+        <div class="title pt-10">
+            <h3>View Images</h3>
+        </div>
+        <div class="table-view pt-10">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th width="10%">ID</th>
+                        <th width="30%">Name</th>
+                        <th width="30%">Thumbnail Image</th>
+                        <th width="10%">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of countriesList |  paginate: { itemsPerPage: items,currentPage: p }">
+                        <td width="10%">{{data.id}}</td>
+                        <td width="30%">{{data.name}}</td>
+                        <td width="30%"><img [src]="data.thumbnail" height="150" width="200px"></td>
+                        <td width="30%"> <button type="button" class="type-button btn btn-danger ml-20" (click)="deleteImage(data)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="Pagiantion">
+                <div class="leftPaginate">
+                    <h4>Total Records: {{ totalRecords }}</h4>
+                </div>
+                <div class="pagination">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

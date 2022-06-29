@@ -1,0 +1,81 @@
+@import "../../../assets/scss/functions";
+@import "../../../assets/scss/variables";
+
+.xplore-header {
+    box-shadow: 0 0 10px #444 !important;
+    position: relative;
+    .xplore-container {
+        height: 80px;
+        padding: 0 40px;
+        h2,
+        a {
+            color: $grey;
+        }
+        .xplore-header-logo {
+            cursor: pointer;
+        }
+        .logo-class {
+            cursor: pointer;
+        }
+        @include FlexLayout(row, normal, center);
+        .xlpore-header-right,
+        .xplore-middle-set {
+            @include FlexLayout(row, space-between, center);
+            a {
+                padding-right: 3rem;
+                text-decoration: none;
+            }
+            .select-agent {
+                h2 {
+                    text-align: center;
+                    padding-top: 5px;
+                }
+                border: 1px solid aliceblue;
+                border-radius: 30px;
+                background: aliceblue;
+                border-radius: 30px;
+            }
+            .searchInput{
+                position: relative;
+                .search-input{
+                    height: 30px;
+                    border:none;
+                    background-color: aliceblue;
+                    padding-right: 35px;
+                }
+                mat-icon{
+                    position: absolute;
+                    right: 10px;
+                    top: 13px;
+                }
+            }
+           
+        }
+        .xlpore-header-right {
+            justify-content: center;
+        }
+        .dropdown-button:focus{
+            outline: none;
+        }
+    }
+}
+
+/***************************************
+* Responsive Code
+****************************************/
+@media only screen and (max-width: 600px) {
+    .xplore-header {
+        .xplore-container {
+            .xplore-header-logo {
+                display: none;
+            }
+            .xlpore-header-right {
+                a {
+                    padding-right: 1rem;
+                    text-decoration: none;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

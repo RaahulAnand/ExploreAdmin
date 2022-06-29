@@ -1,0 +1,64 @@
+@import "../../../../assets/scss/functions";
+@import "../../../../assets/scss/variables";
+
+.company-signup {
+    .signup-header {
+        box-shadow: 0 0 20px $grey4 !important;
+        position: relative;
+        .container {
+            @include TextAlign(center);
+            .sub-heading {
+                color: $header-background;
+            }
+        }
+    }
+    .signup-form {
+        background-image: url("../../../../assets/images/signup_background.png");
+        background-position: bottom;
+        background-repeat: repeat-x;
+        padding-bottom: 15% !important;
+        box-shadow: inset 0 0 0 2000px rgba(31, 82, 97, 0.1);
+        .container {
+            text-align: center;
+            .contact-form {
+                width: 500px;
+                margin: auto;
+
+                input {
+                    background: $white;
+                    @include BorderRadius(20px, 20px, 20px, 20px);
+                    height: 45px;
+                    padding-left: 25px;
+                    margin-bottom: 25px;
+                }
+                .form-check-input {
+                    width: 20px;
+                }
+                textarea {
+                    background: $white;
+                    padding-left: 25px;
+                    @include BorderRadius(20px, 20px, 20px, 20px);
+                }
+            }
+            .proceed-button {
+                text-align: center;
+                .btn {
+                    width: 15%;
+                    border-radius: 30px;
+                    @include BorderRadius(30px, 30px, 30px, 30px);
+                    height: 60px;
+                    border: none;
+                    background-image: linear-gradient(90deg, $button-gradient-lighter, $button-gradient-darker);
+                }
+            }
+        }
+    }
+}
+/***************************************
+* Responsive Code
+****************************************/
+@media only screen and (max-width: 700px) {
+    .contact-form {
+        width: auto !important;
+    }
+}

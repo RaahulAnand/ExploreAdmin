@@ -1,0 +1,86 @@
+<div class="xplore-sidebar">
+    <div class="xplore-navItems">
+        <a class="button-signup font-size-14 font-semiBold">
+            <mat-icon>desktop_mac</mat-icon> Dashboard
+        </a>
+        <a [routerLink]="['/Package']" [routerLinkActive]="['active']" class="button-signup font-size-14 font-semiBold">
+            <mat-icon>label</mat-icon>Your Product
+        </a>
+        <a class="login-signup font-size-14 font-semiBold">
+            <mat-icon>view_list</mat-icon>Already Listed
+        </a>
+        <a class="login-signup font-size-14 font-semiBold">
+            <mat-icon>insert_chart_outlined</mat-icon>Get Boosted
+        </a>
+        <a class="login-signup font-size-14 font-semiBold">
+            <mat-icon>supervisor_account</mat-icon>Manage Your Account
+        </a>
+        <a class="login-signup font-size-14 font-semiBold">
+            <mat-icon>trending_up</mat-icon>Grow Your Business
+        </a>
+
+    </div>
+
+    <mat-accordion class="example-headers-align">
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <p class="mat-title">Country</p>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="subMenu">
+                <a [routerLink]="['/Country']" [routerLinkActive]="['active']" class="login-signup font-size-14 font-semiBold">
+                    Add Country
+                </a>
+                <a [routerLink]="['/ListCountry']" [routerLinkActive]="['active']" class="login-signup font-size-14 font-semiBold">
+                    List Country
+                </a>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <p class="mat-title">State</p>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="subMenu">
+                <a [routerLink]="['/State']" [routerLinkActive]="['active']" class="login-signup font-size-14 font-semiBold">
+                    Add State
+                </a>
+                <a [routerLink]="['/ListState']" [routerLinkActive]="['active']" class="login-signup font-size-14 font-semiBold">
+                    List State
+                </a>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <p class="mat-title">Destination</p>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="subMenu">
+                <a [routerLink]="['/Destination']" [routerLinkActive]="['active']" class="login-signup font-size-14 font-semiBold">
+                    Add Destination
+                </a>
+                <a [routerLink]="['/ListDestination']" [routerLinkActive]="['active']" class="login-signup font-size-14 font-semiBold">
+                    List Destination
+                </a>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <p class="mat-title">Images</p>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="subMenu">
+                <a [routerLink]="['/AddImages']" [routerLinkActive]="['active']" class="login-signup font-size-14 font-semiBold">
+                    Upload Images
+                </a>
+                <a [routerLink]="['/ViewImages']" [routerLinkActive]="['active']" class="login-signup font-size-14 font-semiBold">
+                    View Images
+                </a>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

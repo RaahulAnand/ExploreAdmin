@@ -1,0 +1,33 @@
+<div class="cities-carousel pt-50">
+    <div class="container">
+        <div class="cities-heading pb-20" [ngClass]="headings.className || 'normal'">
+            <h2 class="heading-title pt-15 font-size-28 font-extraBold text-color-1">{{headings.title}}</h2>
+            <p class="heading-sub-title font-size-20 font-semiBold text-color-2" *ngIf="headings.subTitle">
+                {{headings.subTitle}}</p>
+        </div>
+    </div>
+    <div class="cities-modify" [ngClass]="headings.itemClass || 'normal'">
+        <div class="cities-item swiper-container container pt-26" [swiper]="config">
+            <div class="swiper-wrapper h-100">
+                <div *ngFor="let cities of citiesList; let i=index;"
+                    class="swiper-slide col-md-3 col-xs-12 col-sm-6 pr-20" (click)="goToPlaces(cities,i);">
+                    <div class="cities-img ">
+                        <a class="cities-link">
+                            <img class="cities-images" [src]="cities.imgLoc" alt="product.sku">
+                            <p class="cities-name font-size-24 font-extraBold"
+                            [ngClass]="headings.nameClass || 'normalName'">{{cities.name}}</p>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+            <button mat-mini-fab class="swiper-button-prev swiper-button left-button">
+                <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
+            <button mat-mini-fab class="swiper-button-next swiper-button">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,58 @@
+@import "../../../assets/scss/functions";
+@import "../../../assets/scss/variables";
+.xplore-sidebar {
+    position: absolute;
+    height: 100%;
+    width: 13%;
+    background: $white;
+    box-shadow: 3px 17px 20px -5px #444;
+    .xplore-navItems {
+        @include FlexLayout(column, unset, flex-start);
+        a {
+            color: $grey11;
+            text-decoration: none;
+            padding: 10px 25px;
+            margin: 10px 0;
+            mat-icon {
+                vertical-align: bottom;
+                width: 30px;
+            }
+        }
+        .active {
+            background-color: #daecff;
+            width: 100%;
+        }
+    }
+    .mat-title {
+        color: $grey11;
+        font-size: 14px !important;
+        font-weight: 600 !important ;
+        padding-left: 7px;
+        margin-top: -3px;
+    }
+    mat-expansion-panel {
+        box-shadow: none;
+        width: 100%;
+    }
+    .subMenu {
+        @include FlexLayout(column, unset, flex-start);
+        a {
+            padding: 10px 10px;
+            color: $grey11;
+            text-decoration: none;
+            mat-icon {
+                margin-right: 10px;
+            }
+        }
+        .active {
+            background-color: #daecff;
+            width: 100%;
+        }
+    }
+}
+.mat-expansion-indicator{
+    margin-top: -15px !important;
+}
+.span.mat-expansion-indicator.ng-tns-c152-6.ng-trigger.ng-trigger-indicatorRotate.ng-star-inserted{
+    margin-top: -15px !important;
+}

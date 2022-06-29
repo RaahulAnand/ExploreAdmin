@@ -1,0 +1,11 @@
+<!-- <app-top-navbar [className]="navbarClass"></app-top-navbar>
+<app-side-navbar></app-side-navbar> -->
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#3095bb" type="line-spin-clockwise-fade-rotating"
+  [fullScreen]="true">
+  <p class="spinner-text pt-30 font-size-24" style="color: white"> Xploring... </p>
+</ngx-spinner>
+<mat-icon class="to-top-icon mat-icon-xs mat-icon" [ngClass]="{'show-scrollTop': windowScrolled}"
+  (click)="scrollToTop()">arrow_upward
+</mat-icon>
+<router-outlet></router-outlet>
+<!-- <app-footer></app-footer> -->

@@ -1,0 +1,44 @@
+.slide-item {
+    // background-size: cover;
+    background-size: 100% 700px;
+    height: 700px;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px #6c757d;
+    .content {
+        position: absolute;
+        right: 10%;
+        top: 20%;
+        p {
+            color: white;
+            font-family: historia;
+            font-size: 110px;
+        }
+        .btn {
+            border-radius: 30px;
+            width: 250px;
+        }
+    }
+}
+.swiper-button {
+    top: 50% !important;
+}
+
+/***************************************
+* Responsive Code
+****************************************/
+@media only screen and (max-width: 600px) {
+    .slide-item {
+        background-size: cover !important;
+        height: 400px !important;
+        .content {
+            p {
+                font-size: 50px !important;
+            }
+            .btn {
+                width: auto;
+                font-size: 20px !important;
+            }
+        }
+    }
+}

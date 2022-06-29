@@ -1,0 +1,133 @@
+@import "../../../assets/scss/functions";
+@import "../../../assets/scss/variables";
+
+.xplore-places {
+    background: #f6f6f6;
+    .heading-section {
+        min-height: 400px;
+        @include SetBackgroundShadow;
+        @include BackgroundImageSet("../../../assets/images/rajasthan.jpg", no-repeat, cover);
+        .container {
+            @include TextAlign(center);
+            @include FlexLayout(column, unset, unset);
+            p {
+                color: $white;
+                &.heading-title {
+                    padding-top: 6%;
+                }
+            }
+        }
+    }
+    .heading-button {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        .heading_button {
+            background: $white;
+            border: 1px solid;
+            color: $header-background;
+            padding: 5px 30px;
+            font-size: 14px;
+            @include BorderRadius(10px, 10px, 10px, 10px);
+            &:focus {
+                box-shadow: 0 0 0.2rem $header-background;
+            }
+        }
+    }
+    .filter-button {
+        padding: 5px 30px;
+        border: none;
+        border-radius: 25px;
+        display: none;
+    }
+    .filter-destination-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    // .filter-section {
+    //     display: inline-block;
+    //     p {
+    //         align-self: center;
+    //         font-weight: 500;
+    //     }
+    //     button.btn {
+    //         width: 30%;
+    //         height: 35px;
+    //         border: none;
+    //         background-image: linear-gradient(to right, $light-red, $active-red);
+    //     }
+    //     .mat-icon {
+    //         color: orange;
+    //         font-size: 16px;
+    //     }
+    //     .filter-heading {
+    //         @include FlexLayout(row, space-between, unset);
+    //         @include SetBoxShadow;
+    //         @include BorderRadius(25px, 25px, 25px, 25px);
+    //         .btn {
+    //             @include BorderRadius(25px, 25px, 25px, 25px);
+    //         }
+    //     }
+    //     .catogery-box {
+    //         @include SetBoxShadow;
+    //         @include BorderRadius(25px, 25px, 25px, 25px);
+    //     }
+    // }
+    .cities-item {
+        .swiper-wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            height: auto;
+        }
+        .explore-button .btn {
+            @include BorderRadius(20px, 20px, 20px, 20px);
+            background-color: $header-background;
+            border: none;
+            width: 30%;
+            &:focus {
+                box-shadow: 0 0 0.2rem $header-background;
+            }
+        }
+    }
+}
+
+/***************************************
+* Responsive Code
+****************************************/
+@media only screen and (max-width: 600px) {
+    .container {
+        .heading-title {
+            font-size: 30px !important;
+        }
+    }
+}
+@media only screen and (max-width: 700px) {
+    .container {
+        p {
+            &.heading-title {
+                padding-top: 30% !important;
+            }
+        }
+        .filter-destination-section {
+            flex-direction: column;
+            .filter-pane {
+                transition: all 0.2s ease-in-out;
+                display: none !important;
+            }
+            .filter-responsive {
+                transition: all 0.2s ease-in-out;
+                align-self: center;
+                display: initial !important;
+            }
+        }
+        .explore-button .btn {
+            width: 50% !important;
+        }
+        .filter-button {
+            display: inline;
+        }
+    }
+}

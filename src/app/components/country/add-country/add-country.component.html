@@ -1,0 +1,29 @@
+<div class="others-section">
+    <div class="others container ">
+        <div class="title pt-30">
+            <h3>Add Country</h3>
+        </div>
+        <div class="pt-10 pb-30">
+            <div class="addUpdate-form">
+                <form name="addUpdateCountry" [formGroup]="addCountryForm">
+                    <div class="input-row pb-20">
+                        <label for="email">country Name</label>
+                        <input class="form-control form-input col-md-12" type="text" name="name" formControlName="name" placeholder="Enter Country Name">
+                    </div>
+                    <div class="input-row pb-20">
+                        <label for="email">Image Selection</label>
+                        <input class="form-control form-input col-md-12" type="text" name="ImageIds" formControlName="ImageIds" placeholder="Choose Image List" disabled>
+                    </div>
+                    <button type="button" class="btn btn-primary mt-20 mb-20 text-center" (click)="chooseImages()">Choose Images</button>
+                    <bR>
+                    <div *ngIf="selectedImageList.length > 0" class="imageList">
+                        <p class="warning-message">*click image to remove from selection</p>
+                        <img *ngFor='let data of selectedImageList[0]' [src]="data.thumbnail" height="150" width="200px" style="margin: 3px;" (click)="removeImage(data)"> <br/>
+                    </div>
+                    <button type="button" class="btn btn-primary mt-20 mb-20" (click)="addUpdateCountry()" [disabled]="!addCountryForm.valid">Add Country</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

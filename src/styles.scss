@@ -1,0 +1,858 @@
+@import "./assets/scss/variables";
+@import "./assets/scss/functions";
+@import "./assets/scss/material_style.scss";
+@import "~swiper/dist/css/swiper.min.css";
+
+/**************************************************************************
+***************** Master Stylesheet for Xplore ecommerce************************
+***************************************************************************
+=========================== Content Index =================================
+* 1. General styles
+* 2. User Login and Signup
+* 3. Cities and Details Carousel
+* 4. Description Page
+***************************************************************************
+**************************************************************************/
+
+
+/***************************************/
+
+
+/***************************************
+* 1. General styles
+****************************************/
+
+@font-face {
+    font-family: historia;
+    src: url(assets/fonts/TheHistoriaDemo.ttf) format("opentype");
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: serif;
+    position: relative;
+    font-size: 1rem;
+    z-index: -2;
+    // font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: "Montserrat", sans-serif;
+    color: $font-color !important;
+}
+
+h1 {
+    font-size: 60px;
+    color: $theme-main-dark;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 36px;
+    color: $theme-main-dark;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+
+h3 {
+    font-size: 28px;
+    text-align: left;
+    color: $theme-main-dark;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+h5 {
+    font-size: 16px;
+    font-weight: 400;
+    color: $theme-main-dark;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+}
+
+h6 {
+    font-size: 14px;
+    font-weight: 400;
+    color: $theme-main-dark;
+    line-height: 24px;
+}
+
+.font-thin {
+    font-weight: 100 !important;
+}
+
+.font-regular {
+    font-weight: 400 !important;
+}
+
+.font-medium {
+    font-weight: 500 !important;
+}
+
+.font-semiBold {
+    font-weight: 600 !important;
+}
+
+.font-extraBold {
+    font-weight: 800 !important;
+}
+
+a {
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.color-red {
+    color: red !important;
+}
+
+.color-primary {
+    color: $button-gradient-regular;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.mat-raised-button:not([class*="mat-elevation-z"]) {
+    box-shadow: none;
+}
+
+.mat-slider-track-fill {
+    background-color: $theme-main;
+}
+
+.mat-primary .mat-slider-thumb {
+    background-color: $theme-main;
+}
+
+.mat-raised-button.mat-warn {
+    background-color: $theme-main-red;
+}
+
+.mat-raised-button.mat-success {
+    background-color: $theme-main-green;
+}
+
+.mat-card:not([class*="mat-elevation-z"]) {
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0), 0 1px 3px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+    color: $theme-main;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: $theme-main;
+}
+
+.mat-expansion-indicator::after,
+.mat-expansion-panel-header-description {
+    color: $grey4;
+}
+
+.xplore-app .mat-drawer-container {
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    overflow: hidden;
+}
+
+.mat-menu-panel {
+    min-width: 100% !important;
+    max-width: 100% !important;
+}
+
+.mat-mini-fab.mat-accent {
+    background-color: $input-background;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+li {
+    list-style-type: none;
+}
+
+.mat-snack-bar-container.error {
+    background: $theme-main-red !important;
+}
+
+.mat-drawer-backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.mat-drawer-container {
+    color: $font-color;
+}
+
+.mat-radio-label-content {
+    color: $grey7;
+    font-weight: 400;
+}
+
+.mat-form-field-wrapper {
+    background: $gray-lighter;
+    border-radius: 25px;
+    height: 45px;
+}
+
+mat-form-field {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center !important;
+}
+
+.mat-mini-fab .mat-button-wrapper {
+    color: $theme-main-red;
+    .mat-icon {
+        font-weight: bold;
+    }
+}
+
+.mat-form-field-infix {
+    padding: 0 !important;
+}
+
+mat-datepicker-toggle {
+    padding-right: 30px;
+    button {
+        outline: none !important;
+        .mat-button-wrapper {
+            font-size: 35px;
+            color: $button-gradient-regular;
+        }
+        .mat-ripple,
+        .mat-button-focus-overlay {
+            display: none !important;
+            outline: none !important;
+            visibility: hidden !important;
+        }
+    }
+}
+
+mat-step-header .mat-step-icon-not-touched span,
+mat-step-header .mat-step-icon span,
+mat-step-header .mat-step-icon-not-touched .mat-icon,
+mat-step-header .mat-step-icon .mat-icon,
+mat-step-header .mat-step-icon-content .mat-icon,
+mat-step-header .mat-step-icon .mat-step-icon-state-number .mat-step-icon-selected {
+    display: none !important;
+}
+
+.mat-horizontal-stepper-header .mat-step-icon,
+.mat-form-field-underline {
+    display: none !important;
+}
+
+.mat-horizontal-stepper-header-container {
+    padding: 35px 0 !important;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-left: 25%;
+    padding: 0 15px !important;
+}
+
+.divider {
+    border-top: 1px solid $grey3;
+}
+
+.bg {
+    background: $background;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.no-pdn {
+    padding: 0 !important;
+}
+
+.devider {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    border-top: 1px dashed $grey;
+}
+
+.text-muted {
+    color: $grey !important;
+}
+
+.sec-padding {
+    padding: 60px 0;
+}
+
+.bottom-line {
+    border-bottom: 1px solid;
+}
+
+.bottom-line-right {
+    border-right: 1px solid;
+}
+
+.bottom-line-left {
+    border-left: 1px solid;
+}
+
+.btn-project {
+    background: $theme-main !important;
+    padding: 5px 32px !important;
+    color: $theme-main-dark !important;
+    &:disabled {
+        background: $button-disabled !important;
+    }
+}
+
+.form-input {
+    // border: 1px solid $header-background;
+    // border: none;
+    background: $white;
+    // margin-bottom: 10px;
+    // border-radius: 20px;
+    // border-radius: 10px;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+.fa {
+    font-size: 24px;
+    color: white;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.text-end {
+    text-align: end;
+}
+
+.allign-center {
+    align-self: center;
+}
+
+$margins: 200;
+@for $i from 1 through $margins {
+    .ml-#{$i} {
+        margin-left: $i + px !important;
+    }
+    .mr-#{$i} {
+        margin-right: $i + px !important;
+    }
+    .mt-#{$i} {
+        margin-top: $i + px !important;
+    }
+    .mb-#{$i} {
+        margin-bottom: $i + px !important;
+    }
+    .pb-#{$i} {
+        padding-bottom: $i + px !important;
+    }
+    .pt-#{$i} {
+        padding-top: $i + px !important;
+    }
+    .pl-#{$i} {
+        padding-left: $i + px !important;
+    }
+    .pr-#{$i} {
+        padding-right: $i + px !important;
+    }
+    .font-size-#{$i} {
+        font-size: $i + px !important;
+    }
+    .setHeight-#{$i} {
+        height: $i + px !important;
+    }
+    .setWidth-#{$i} {
+        width: $i + px !important;
+    }
+    .border-radius-#{$i} {
+        border-radius: $i + px !important;
+    }
+}
+
+.backdropBackground {
+    // background-color: $gray-lighter;
+}
+
+.heading-style {
+    border: none !important;
+}
+
+.item-style {
+    background: $white;
+}
+
+.item-style-grey {
+    background: $gray-lighter;
+}
+
+.text-color-1 {
+    color: $grey11;
+}
+
+.text-color-2 {
+    color: $grey5;
+}
+
+// General Pagination Styles
+.ngx-pagination a,
+.ngx-pagination button {
+    font-size: 16px;
+    color: $theme-main-red !important;
+    &:hover,
+    &:focus {
+        background: transparent !important;
+        outline: none !important;
+    }
+}
+
+.ngx-pagination .current {
+    background: $header-background !important;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+// General Pagination Styles
+
+/***************************************
+* 2. User Login and Signup
+****************************************/
+
+.xplore-userLogin {
+    background: linear-gradient(90deg, #020024 0%, #4343b3 0%, #c2d5eb 0%, #1b63ad 0%, #14a6cc 25%, #30a9c2 50%);
+    height: 100%;
+    .login-page {
+        padding: 40px !important;
+        h2 {
+            @include TextAlign(center);
+            color: white;
+            font-weight: 100;
+            padding-top: 10%;
+        }
+        .box-layout {
+            margin-left: auto;
+            background: #fff;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 5px 34px 0px -20px #f8f9fa, 5px 65px 0px -36px #e9ecef;
+            padding: 30px;
+            width: 26rem;
+            margin-right: auto;
+            border-radius: 5px;
+            // height: 550px;
+            .content {
+                @include FlexLayout(column, space-between, unset);
+                .top-header-content {
+                    @include TextAlign(center);
+                    p {
+                        font-size: 18px;
+                        margin: 0px;
+                    }
+                }
+                .login-form {
+                    @include TextAlign(center);
+                    label {
+                        font-size: 14px;
+                        padding-top: 10px;
+                    }
+                    button {
+                        margin-top: 20px;
+                        width: 100%;
+                        border-radius: 0;
+                        background: #0e95a2;
+                        border: none;
+                        height: 40px;
+                    }
+                    .remember-section {
+                        @include FlexLayout(row, space-between, unset);
+                        margin: 5px 0 0 20px;
+                    }
+                }
+            }
+        }
+        .signup {
+            @include TextAlign(center);
+            button {
+                background: #02364e;
+                border-radius: 50px;
+                width: 300px;
+                border: none;
+                // margin-top: 30px;
+                p {
+                    display: inline;
+                    color: #13c3cc;
+                }
+            }
+        }
+    }
+}
+
+
+/***************************************
+* 3. Cities and Details Carousel
+****************************************/
+
+.cities-heading {
+    display: inline-block;
+    border-top: 5px solid $header-background;
+}
+
+.swiper-button {
+    outline: none;
+}
+
+.cities-item {
+    overflow: hidden;
+    position: unset;
+    height: auto;
+    transition: 0.4s;
+    position: relative;
+    @include TextAlign(center);
+    .swiper-wrapper {
+        .cities-img {
+            position: relative;
+            .day-night {
+                position: absolute;
+                bottom: 0px;
+                display: flex;
+                left: 10px;
+                color: $white;
+            }
+            .featured {
+                position: absolute;
+                right: 10px;
+                bottom: 0;
+                color: $white;
+            }
+        }
+        .cities-name {
+            color: $white;
+            // font-size: 28px;
+            @include TextAlign(center);
+            transform: translateY(-50px);
+            // letter-spacing: 1px;
+            text-transform: uppercase;
+            // font-weight: 800;
+        }
+        .cities-images {
+            width: 100%;
+            // width: 280px;
+            height: 250px;
+            border-radius: 20px;
+            &:hover {
+                @include SetBoxShadow;
+            }
+        }
+        .cities-detail-images {
+            width: 100%;
+            height: 200px;
+            box-shadow: 0px 0px 10px #6c757d;
+            @include BorderRadius(20px, 20px, 0, 0);
+        }
+        .details {
+            @include BorderRadius(0px, 0px, 20px, 20px);
+            box-shadow: 0px 0px 10px #6c757d;
+            background-color: $white;
+            .stars {
+                color: $star-color;
+                mat-icon {
+                    font-size: 18px !important;
+                }
+            }
+            p {
+                font-weight: bold;
+            }
+            .details-bottom {
+                @include FlexLayout(row, space-around, unset);
+                flex-wrap: wrap;
+                .details-price {
+                    letter-spacing: 1px;
+                    .original-price {
+                        text-decoration: line-through;
+                        font-weight: 500;
+                        color: gray;
+                    }
+                }
+                button.btn {
+                    width: 100px;
+                    @include BorderRadius(20px, 20px, 20px, 20px);
+                    border: none;
+                    font-weight: 600;
+                    background-image: linear-gradient(to right, $light-red, $active-red);
+                    outline: none;
+                }
+            }
+        }
+    }
+    .swiper-button {
+        position: absolute;
+        top: 40%;
+        z-index: 10;
+        right: 0;
+        outline: none;
+        border: none;
+        background-image: none;
+        text-decoration: none;
+        height: 50px;
+        width: 50px;
+        background: white;
+        box-shadow: 0px 0px 2px #b5b2b2;
+        &.left-button {
+            left: 0;
+        }
+    }
+}
+
+.exploreMore-button {
+    text-align: center;
+    button {
+        @include BorderRadius(20px, 20px, 20px, 20px);
+        border: none;
+        font-weight: 600;
+        background-image: linear-gradient(to right, $button-gradient-regular, $button-gradient-darker);
+        outline: none;
+        &:focus {
+            box-shadow: 0 0 0 0.2rem $button-gradient-lighter;
+        }
+    }
+}
+
+
+/***************************************
+* 4. Description Page
+****************************************/
+
+.head-count {
+    @include FlexLayout("row", space-around, "unset");
+    .count-section {
+        @include FlexLayout("row", space-around, "unset");
+        flex-wrap: wrap;
+        mat-icon {
+            cursor: pointer;
+            color: $button-gradient-regular;
+            @include TextAlign(center);
+        }
+        .counters {
+            display: flex;
+        }
+    }
+    .form-control {
+        width: 40px;
+        height: 20px;
+        border: 1px solid;
+        @include TextAlign(center);
+    }
+}
+
+.booking-description-section {
+    color: $grey11;
+    .booking-section {
+        background: $gray-lighter;
+        .booking-description {
+            @include FlexLayout("row", "unset", "unset");
+            flex-wrap: wrap;
+            .image-section {
+                display: flex;
+                padding: 0px !important;
+                .cities-img {
+                    position: relative;
+                    .cities-detail-images {
+                        @include BorderRadius(20px, 0px, 0px, 20px);
+                        width: 100%;
+                        height: 400px;
+                    }
+                    .image-desc {
+                        display: flex;
+                        padding: 10px 20px;
+                        position: absolute;
+                        top: 0;
+                        background-color: rgba(0, 0, 0, 0.3);
+                        width: 100%;
+                        align-items: center;
+                        color: white;
+                        @include BorderRadius(20px, 0px, 0px, 0);
+                        .day-night {
+                            display: flex;
+                        }
+                        .featured {
+                            position: absolute;
+                            right: 10px;
+                        }
+                    }
+                }
+            }
+            .description {
+                background: $white;
+                @include BorderRadius(0, 20px, 20px, 0);
+                height: 400px;
+                .specification {
+                    @include FlexLayout("row", "unset", "unset");
+                }
+                .rating-section {
+                    @include FlexLayout("row", "unset", "unset");
+                    .stars {
+                        mat-icon {
+                            font-size: 14px;
+                            color: orange;
+                        }
+                    }
+                }
+                .misc-letter {
+                    font-weight: 500;
+                }
+                .price-adult {
+                    color: $theme-main-red;
+                }
+                .explore-button>.btn {
+                    width: 100%;
+                    margin-left: -15px;
+                    border-radius: 0 0 20px 0;
+                    height: 60px;
+                    border: none;
+                    @include gradientColors(90deg, $button-gradient-regular, $button-gradient-darker);
+                    position: absolute;
+                    bottom: 0;
+                    &:focus {
+                        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.2);
+                    }
+                }
+                h2.desc-heading {
+                    font-size: 24px;
+                }
+                .type-button {
+                    background: $button-gradient-lighter;
+                    border: none;
+                    border-radius: 24px;
+                    height: 50px;
+                }
+            }
+            .rating-number {
+                float: right;
+                width: 100;
+                position: absolute;
+                right: 20px;
+                border: 1px solid;
+                padding-top: 20p;
+                top: 110px;
+                background: $button-gradient-regular;
+                border-radius: 5px;
+                color: white;
+                width: 40px;
+                text-align: center;
+                font-size: 14px;
+            }
+            .inclusive-details,
+            .overview-section {
+                background: white;
+                border-radius: 20px;
+                .details-inc {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    div {
+                        text-align: center;
+                    }
+                }
+            }
+            .paragraph {
+                text-align: left;
+                overflow: hidden;
+                font-size: 12px;
+                &.tab-close {
+                    height: 20px;
+                }
+            }
+            .explore-button,
+            .read-button {
+                color: red;
+                cursor: pointer;
+            }
+            .read-button {
+                float: right;
+            }
+            .faq-section,
+            .supplier-details,
+            .review-details,
+            .comment-section {
+                background: white;
+                border-radius: 20px;
+                .supplier,
+                .review-section {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                textarea {
+                    resize: none;
+                    &:focus {
+                        box-shadow: 0 0 0 0.05rem $header-background;
+                    }
+                }
+                .submit_button {
+                    background: $header-background;
+                    border: none;
+                    float: right;
+                    font-size: 12px;
+                    border-radius: 20px;
+                    &:focus {
+                        box-shadow: 0 0 0 0.05rem $header-background;
+                    }
+                }
+                .supplier-image {
+                    width: 100px;
+                    height: 100px;
+                }
+                .supplier-name,
+                .review-rating {
+                    align-self: center;
+                }
+                .rating-number {
+                    position: inherit;
+                }
+                .stars {
+                    position: absolute;
+                    top: 0;
+                    left: 120px;
+                    cursor: pointer;
+                    mat-icon:hover {
+                        color: orange;
+                    }
+                    mat-icon:hover:before,
+                    mat-icon:hover~mat-icon:before {
+                        color: #4bce32;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@import "../../../assets/scss/variables";
+.swiper-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+p.cities-name {
+    transform: translateY(-140px) !important;
+}

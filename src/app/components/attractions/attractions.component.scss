@@ -1,0 +1,22 @@
+@import "../../../assets/scss/functions";
+@import "../../../assets/scss/variables";
+
+.attractions-items {
+    @include FlexLayout(row, flex-start, unset);
+    flex-wrap: wrap;
+    padding: 20px;
+    border-radius: 20px;
+    background: white;
+    .item {
+        padding: 10px 20px 10px 0px;
+        .item-title {
+            margin: 0 !important;
+            border: 1px solid $active-red;
+            border-radius: 20px;
+            padding: 0 30px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+}
